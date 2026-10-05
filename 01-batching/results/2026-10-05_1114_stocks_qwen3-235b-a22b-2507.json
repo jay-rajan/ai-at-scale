@@ -1,0 +1,4411 @@
+{
+  "model": "qwen/qwen3-235b-a22b-2507",
+  "n": 30,
+  "pinned": null,
+  "time": "Mon Oct  5 11:14:09 2026",
+  "table": {
+    "vague": {
+      "NOVA (clear buy)": {
+        "BUY": 30
+      },
+      "ORBIT (clear buy)": {
+        "BUY": 30
+      },
+      "DUSKWARE (clear sell)": {
+        "SELL": 30
+      },
+      "RUSTLINE (clear sell)": {
+        "SELL": 30
+      },
+      "HALCYON (knife-edge)": {
+        "HOLD": 30
+      },
+      "MERIDIAN (knife-edge)": {
+        "HOLD": 30
+      },
+      "TESSERA (knife-edge)": {
+        "HOLD": 30
+      },
+      "QUILL (knife-edge)": {
+        "HOLD": 30
+      }
+    },
+    "forced": {
+      "NOVA (clear buy)": {
+        "BUY": 30
+      },
+      "ORBIT (clear buy)": {
+        "BUY": 30
+      },
+      "DUSKWARE (clear sell)": {
+        "SELL": 30
+      },
+      "RUSTLINE (clear sell)": {
+        "SELL": 30
+      },
+      "HALCYON (knife-edge)": {
+        "SELL": 30
+      },
+      "MERIDIAN (knife-edge)": {
+        "BUY": 30
+      },
+      "TESSERA (knife-edge)": {
+        "SELL": 30
+      },
+      "QUILL (knife-edge)": {
+        "BUY": 26,
+        "HOLD": 4
+      }
+    },
+    "clear": {
+      "NOVA (clear buy)": {
+        "BUY": 29,
+        "?1": 1
+      },
+      "ORBIT (clear buy)": {
+        "BUY": 30
+      },
+      "DUSKWARE (clear sell)": {
+        "SELL": 30
+      },
+      "RUSTLINE (clear sell)": {
+        "SELL": 30
+      },
+      "HALCYON (knife-edge)": {
+        "SELL": 29,
+        "?1. REVENUE": 1
+      },
+      "MERIDIAN (knife-edge)": {
+        "HOLD": 30
+      },
+      "TESSERA (knife-edge)": {
+        "HOLD": 30
+      },
+      "QUILL (knife-edge)": {
+        "HOLD": 30
+      }
+    }
+  },
+  "calls": [
+    {
+      "prompt": "vague",
+      "company": "NOVA (clear buy)",
+      "label": "BUY",
+      "provider": "Parasail"
+    },
+    {
+      "prompt": "vague",
+      "company": "NOVA (clear buy)",
+      "label": "BUY",
+      "provider": "Parasail"
+    },
+    {
+      "prompt": "vague",
+      "company": "NOVA (clear buy)",
+      "label": "BUY",
+      "provider": "Parasail"
+    },
+    {
+      "prompt": "vague",
+      "company": "NOVA (clear buy)",
+      "label": "BUY",
+      "provider": "Parasail"
+    },
+    {
+      "prompt": "vague",
+      "company": "NOVA (clear buy)",
+      "label": "BUY",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "vague",
+      "company": "NOVA (clear buy)",
+      "label": "BUY",
+      "provider": "Parasail"
+    },
+    {
+      "prompt": "vague",
+      "company": "NOVA (clear buy)",
+      "label": "BUY",
+      "provider": "Novita"
+    },
+    {
+      "prompt": "vague",
+      "company": "NOVA (clear buy)",
+      "label": "BUY",
+      "provider": "Alibaba"
+    },
+    {
+      "prompt": "vague",
+      "company": "NOVA (clear buy)",
+      "label": "BUY",
+      "provider": "Parasail"
+    },
+    {
+      "prompt": "vague",
+      "company": "NOVA (clear buy)",
+      "label": "BUY",
+      "provider": "Parasail"
+    },
+    {
+      "prompt": "vague",
+      "company": "NOVA (clear buy)",
+      "label": "BUY",
+      "provider": "Parasail"
+    },
+    {
+      "prompt": "vague",
+      "company": "NOVA (clear buy)",
+      "label": "BUY",
+      "provider": "Parasail"
+    },
+    {
+      "prompt": "vague",
+      "company": "NOVA (clear buy)",
+      "label": "BUY",
+      "provider": "Alibaba"
+    },
+    {
+      "prompt": "vague",
+      "company": "NOVA (clear buy)",
+      "label": "BUY",
+      "provider": "Alibaba"
+    },
+    {
+      "prompt": "vague",
+      "company": "NOVA (clear buy)",
+      "label": "BUY",
+      "provider": "Novita"
+    },
+    {
+      "prompt": "vague",
+      "company": "NOVA (clear buy)",
+      "label": "BUY",
+      "provider": "Google"
+    },
+    {
+      "prompt": "vague",
+      "company": "NOVA (clear buy)",
+      "label": "BUY",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "vague",
+      "company": "NOVA (clear buy)",
+      "label": "BUY",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "vague",
+      "company": "NOVA (clear buy)",
+      "label": "BUY",
+      "provider": "Parasail"
+    },
+    {
+      "prompt": "vague",
+      "company": "NOVA (clear buy)",
+      "label": "BUY",
+      "provider": "Alibaba"
+    },
+    {
+      "prompt": "vague",
+      "company": "NOVA (clear buy)",
+      "label": "BUY",
+      "provider": "Google"
+    },
+    {
+      "prompt": "vague",
+      "company": "NOVA (clear buy)",
+      "label": "BUY",
+      "provider": "Alibaba"
+    },
+    {
+      "prompt": "vague",
+      "company": "NOVA (clear buy)",
+      "label": "BUY",
+      "provider": "Parasail"
+    },
+    {
+      "prompt": "vague",
+      "company": "NOVA (clear buy)",
+      "label": "BUY",
+      "provider": "Parasail"
+    },
+    {
+      "prompt": "vague",
+      "company": "NOVA (clear buy)",
+      "label": "BUY",
+      "provider": "Parasail"
+    },
+    {
+      "prompt": "vague",
+      "company": "NOVA (clear buy)",
+      "label": "BUY",
+      "provider": "Alibaba"
+    },
+    {
+      "prompt": "vague",
+      "company": "NOVA (clear buy)",
+      "label": "BUY",
+      "provider": "Parasail"
+    },
+    {
+      "prompt": "vague",
+      "company": "NOVA (clear buy)",
+      "label": "BUY",
+      "provider": "Parasail"
+    },
+    {
+      "prompt": "vague",
+      "company": "NOVA (clear buy)",
+      "label": "BUY",
+      "provider": "Parasail"
+    },
+    {
+      "prompt": "vague",
+      "company": "NOVA (clear buy)",
+      "label": "BUY",
+      "provider": "Parasail"
+    },
+    {
+      "prompt": "vague",
+      "company": "ORBIT (clear buy)",
+      "label": "BUY",
+      "provider": "Parasail"
+    },
+    {
+      "prompt": "vague",
+      "company": "ORBIT (clear buy)",
+      "label": "BUY",
+      "provider": "Parasail"
+    },
+    {
+      "prompt": "vague",
+      "company": "ORBIT (clear buy)",
+      "label": "BUY",
+      "provider": "Novita"
+    },
+    {
+      "prompt": "vague",
+      "company": "ORBIT (clear buy)",
+      "label": "BUY",
+      "provider": "Alibaba"
+    },
+    {
+      "prompt": "vague",
+      "company": "ORBIT (clear buy)",
+      "label": "BUY",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "vague",
+      "company": "ORBIT (clear buy)",
+      "label": "BUY",
+      "provider": "StreamLake"
+    },
+    {
+      "prompt": "vague",
+      "company": "ORBIT (clear buy)",
+      "label": "BUY",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "vague",
+      "company": "ORBIT (clear buy)",
+      "label": "BUY",
+      "provider": "Novita"
+    },
+    {
+      "prompt": "vague",
+      "company": "ORBIT (clear buy)",
+      "label": "BUY",
+      "provider": "Novita"
+    },
+    {
+      "prompt": "vague",
+      "company": "ORBIT (clear buy)",
+      "label": "BUY",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "vague",
+      "company": "ORBIT (clear buy)",
+      "label": "BUY",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "vague",
+      "company": "ORBIT (clear buy)",
+      "label": "BUY",
+      "provider": "Parasail"
+    },
+    {
+      "prompt": "vague",
+      "company": "ORBIT (clear buy)",
+      "label": "BUY",
+      "provider": "Google"
+    },
+    {
+      "prompt": "vague",
+      "company": "ORBIT (clear buy)",
+      "label": "BUY",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "vague",
+      "company": "ORBIT (clear buy)",
+      "label": "BUY",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "vague",
+      "company": "ORBIT (clear buy)",
+      "label": "BUY",
+      "provider": "Alibaba"
+    },
+    {
+      "prompt": "vague",
+      "company": "ORBIT (clear buy)",
+      "label": "BUY",
+      "provider": "Alibaba"
+    },
+    {
+      "prompt": "vague",
+      "company": "ORBIT (clear buy)",
+      "label": "BUY",
+      "provider": "StreamLake"
+    },
+    {
+      "prompt": "vague",
+      "company": "ORBIT (clear buy)",
+      "label": "BUY",
+      "provider": "Parasail"
+    },
+    {
+      "prompt": "vague",
+      "company": "ORBIT (clear buy)",
+      "label": "BUY",
+      "provider": "Parasail"
+    },
+    {
+      "prompt": "vague",
+      "company": "ORBIT (clear buy)",
+      "label": "BUY",
+      "provider": "Parasail"
+    },
+    {
+      "prompt": "vague",
+      "company": "ORBIT (clear buy)",
+      "label": "BUY",
+      "provider": "Parasail"
+    },
+    {
+      "prompt": "vague",
+      "company": "ORBIT (clear buy)",
+      "label": "BUY",
+      "provider": "Novita"
+    },
+    {
+      "prompt": "vague",
+      "company": "ORBIT (clear buy)",
+      "label": "BUY",
+      "provider": "Alibaba"
+    },
+    {
+      "prompt": "vague",
+      "company": "ORBIT (clear buy)",
+      "label": "BUY",
+      "provider": "Parasail"
+    },
+    {
+      "prompt": "vague",
+      "company": "ORBIT (clear buy)",
+      "label": "BUY",
+      "provider": "Parasail"
+    },
+    {
+      "prompt": "vague",
+      "company": "ORBIT (clear buy)",
+      "label": "BUY",
+      "provider": "Parasail"
+    },
+    {
+      "prompt": "vague",
+      "company": "ORBIT (clear buy)",
+      "label": "BUY",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "vague",
+      "company": "ORBIT (clear buy)",
+      "label": "BUY",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "vague",
+      "company": "ORBIT (clear buy)",
+      "label": "BUY",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "vague",
+      "company": "DUSKWARE (clear sell)",
+      "label": "SELL",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "vague",
+      "company": "DUSKWARE (clear sell)",
+      "label": "SELL",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "vague",
+      "company": "DUSKWARE (clear sell)",
+      "label": "SELL",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "vague",
+      "company": "DUSKWARE (clear sell)",
+      "label": "SELL",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "vague",
+      "company": "DUSKWARE (clear sell)",
+      "label": "SELL",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "vague",
+      "company": "DUSKWARE (clear sell)",
+      "label": "SELL",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "vague",
+      "company": "DUSKWARE (clear sell)",
+      "label": "SELL",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "vague",
+      "company": "DUSKWARE (clear sell)",
+      "label": "SELL",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "vague",
+      "company": "DUSKWARE (clear sell)",
+      "label": "SELL",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "vague",
+      "company": "DUSKWARE (clear sell)",
+      "label": "SELL",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "vague",
+      "company": "DUSKWARE (clear sell)",
+      "label": "SELL",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "vague",
+      "company": "DUSKWARE (clear sell)",
+      "label": "SELL",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "vague",
+      "company": "DUSKWARE (clear sell)",
+      "label": "SELL",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "vague",
+      "company": "DUSKWARE (clear sell)",
+      "label": "SELL",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "vague",
+      "company": "DUSKWARE (clear sell)",
+      "label": "SELL",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "vague",
+      "company": "DUSKWARE (clear sell)",
+      "label": "SELL",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "vague",
+      "company": "DUSKWARE (clear sell)",
+      "label": "SELL",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "vague",
+      "company": "DUSKWARE (clear sell)",
+      "label": "SELL",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "vague",
+      "company": "DUSKWARE (clear sell)",
+      "label": "SELL",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "vague",
+      "company": "DUSKWARE (clear sell)",
+      "label": "SELL",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "vague",
+      "company": "DUSKWARE (clear sell)",
+      "label": "SELL",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "vague",
+      "company": "DUSKWARE (clear sell)",
+      "label": "SELL",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "vague",
+      "company": "DUSKWARE (clear sell)",
+      "label": "SELL",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "vague",
+      "company": "DUSKWARE (clear sell)",
+      "label": "SELL",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "vague",
+      "company": "DUSKWARE (clear sell)",
+      "label": "SELL",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "vague",
+      "company": "DUSKWARE (clear sell)",
+      "label": "SELL",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "vague",
+      "company": "DUSKWARE (clear sell)",
+      "label": "SELL",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "vague",
+      "company": "DUSKWARE (clear sell)",
+      "label": "SELL",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "vague",
+      "company": "DUSKWARE (clear sell)",
+      "label": "SELL",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "vague",
+      "company": "DUSKWARE (clear sell)",
+      "label": "SELL",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "vague",
+      "company": "RUSTLINE (clear sell)",
+      "label": "SELL",
+      "provider": "Parasail"
+    },
+    {
+      "prompt": "vague",
+      "company": "RUSTLINE (clear sell)",
+      "label": "SELL",
+      "provider": "Parasail"
+    },
+    {
+      "prompt": "vague",
+      "company": "RUSTLINE (clear sell)",
+      "label": "SELL",
+      "provider": "Parasail"
+    },
+    {
+      "prompt": "vague",
+      "company": "RUSTLINE (clear sell)",
+      "label": "SELL",
+      "provider": "Parasail"
+    },
+    {
+      "prompt": "vague",
+      "company": "RUSTLINE (clear sell)",
+      "label": "SELL",
+      "provider": "Parasail"
+    },
+    {
+      "prompt": "vague",
+      "company": "RUSTLINE (clear sell)",
+      "label": "SELL",
+      "provider": "Parasail"
+    },
+    {
+      "prompt": "vague",
+      "company": "RUSTLINE (clear sell)",
+      "label": "SELL",
+      "provider": "Novita"
+    },
+    {
+      "prompt": "vague",
+      "company": "RUSTLINE (clear sell)",
+      "label": "SELL",
+      "provider": "Google"
+    },
+    {
+      "prompt": "vague",
+      "company": "RUSTLINE (clear sell)",
+      "label": "SELL",
+      "provider": "Parasail"
+    },
+    {
+      "prompt": "vague",
+      "company": "RUSTLINE (clear sell)",
+      "label": "SELL",
+      "provider": "Alibaba"
+    },
+    {
+      "prompt": "vague",
+      "company": "RUSTLINE (clear sell)",
+      "label": "SELL",
+      "provider": "Parasail"
+    },
+    {
+      "prompt": "vague",
+      "company": "RUSTLINE (clear sell)",
+      "label": "SELL",
+      "provider": "Parasail"
+    },
+    {
+      "prompt": "vague",
+      "company": "RUSTLINE (clear sell)",
+      "label": "SELL",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "vague",
+      "company": "RUSTLINE (clear sell)",
+      "label": "SELL",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "vague",
+      "company": "RUSTLINE (clear sell)",
+      "label": "SELL",
+      "provider": "Novita"
+    },
+    {
+      "prompt": "vague",
+      "company": "RUSTLINE (clear sell)",
+      "label": "SELL",
+      "provider": "Alibaba"
+    },
+    {
+      "prompt": "vague",
+      "company": "RUSTLINE (clear sell)",
+      "label": "SELL",
+      "provider": "Alibaba"
+    },
+    {
+      "prompt": "vague",
+      "company": "RUSTLINE (clear sell)",
+      "label": "SELL",
+      "provider": "Parasail"
+    },
+    {
+      "prompt": "vague",
+      "company": "RUSTLINE (clear sell)",
+      "label": "SELL",
+      "provider": "Parasail"
+    },
+    {
+      "prompt": "vague",
+      "company": "RUSTLINE (clear sell)",
+      "label": "SELL",
+      "provider": "Alibaba"
+    },
+    {
+      "prompt": "vague",
+      "company": "RUSTLINE (clear sell)",
+      "label": "SELL",
+      "provider": "Parasail"
+    },
+    {
+      "prompt": "vague",
+      "company": "RUSTLINE (clear sell)",
+      "label": "SELL",
+      "provider": "Parasail"
+    },
+    {
+      "prompt": "vague",
+      "company": "RUSTLINE (clear sell)",
+      "label": "SELL",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "vague",
+      "company": "RUSTLINE (clear sell)",
+      "label": "SELL",
+      "provider": "Parasail"
+    },
+    {
+      "prompt": "vague",
+      "company": "RUSTLINE (clear sell)",
+      "label": "SELL",
+      "provider": "Parasail"
+    },
+    {
+      "prompt": "vague",
+      "company": "RUSTLINE (clear sell)",
+      "label": "SELL",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "vague",
+      "company": "RUSTLINE (clear sell)",
+      "label": "SELL",
+      "provider": "Parasail"
+    },
+    {
+      "prompt": "vague",
+      "company": "RUSTLINE (clear sell)",
+      "label": "SELL",
+      "provider": "Parasail"
+    },
+    {
+      "prompt": "vague",
+      "company": "RUSTLINE (clear sell)",
+      "label": "SELL",
+      "provider": "Parasail"
+    },
+    {
+      "prompt": "vague",
+      "company": "RUSTLINE (clear sell)",
+      "label": "SELL",
+      "provider": "Parasail"
+    },
+    {
+      "prompt": "vague",
+      "company": "HALCYON (knife-edge)",
+      "label": "HOLD",
+      "provider": "Google"
+    },
+    {
+      "prompt": "vague",
+      "company": "HALCYON (knife-edge)",
+      "label": "HOLD",
+      "provider": "Parasail"
+    },
+    {
+      "prompt": "vague",
+      "company": "HALCYON (knife-edge)",
+      "label": "HOLD",
+      "provider": "Parasail"
+    },
+    {
+      "prompt": "vague",
+      "company": "HALCYON (knife-edge)",
+      "label": "HOLD",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "vague",
+      "company": "HALCYON (knife-edge)",
+      "label": "HOLD",
+      "provider": "Novita"
+    },
+    {
+      "prompt": "vague",
+      "company": "HALCYON (knife-edge)",
+      "label": "HOLD",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "vague",
+      "company": "HALCYON (knife-edge)",
+      "label": "HOLD",
+      "provider": "Novita"
+    },
+    {
+      "prompt": "vague",
+      "company": "HALCYON (knife-edge)",
+      "label": "HOLD",
+      "provider": "Parasail"
+    },
+    {
+      "prompt": "vague",
+      "company": "HALCYON (knife-edge)",
+      "label": "HOLD",
+      "provider": "Parasail"
+    },
+    {
+      "prompt": "vague",
+      "company": "HALCYON (knife-edge)",
+      "label": "HOLD",
+      "provider": "Parasail"
+    },
+    {
+      "prompt": "vague",
+      "company": "HALCYON (knife-edge)",
+      "label": "HOLD",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "vague",
+      "company": "HALCYON (knife-edge)",
+      "label": "HOLD",
+      "provider": "Novita"
+    },
+    {
+      "prompt": "vague",
+      "company": "HALCYON (knife-edge)",
+      "label": "HOLD",
+      "provider": "Alibaba"
+    },
+    {
+      "prompt": "vague",
+      "company": "HALCYON (knife-edge)",
+      "label": "HOLD",
+      "provider": "Parasail"
+    },
+    {
+      "prompt": "vague",
+      "company": "HALCYON (knife-edge)",
+      "label": "HOLD",
+      "provider": "Parasail"
+    },
+    {
+      "prompt": "vague",
+      "company": "HALCYON (knife-edge)",
+      "label": "HOLD",
+      "provider": "Parasail"
+    },
+    {
+      "prompt": "vague",
+      "company": "HALCYON (knife-edge)",
+      "label": "HOLD",
+      "provider": "Parasail"
+    },
+    {
+      "prompt": "vague",
+      "company": "HALCYON (knife-edge)",
+      "label": "HOLD",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "vague",
+      "company": "HALCYON (knife-edge)",
+      "label": "HOLD",
+      "provider": "Novita"
+    },
+    {
+      "prompt": "vague",
+      "company": "HALCYON (knife-edge)",
+      "label": "HOLD",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "vague",
+      "company": "HALCYON (knife-edge)",
+      "label": "HOLD",
+      "provider": "StreamLake"
+    },
+    {
+      "prompt": "vague",
+      "company": "HALCYON (knife-edge)",
+      "label": "HOLD",
+      "provider": "Novita"
+    },
+    {
+      "prompt": "vague",
+      "company": "HALCYON (knife-edge)",
+      "label": "HOLD",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "vague",
+      "company": "HALCYON (knife-edge)",
+      "label": "HOLD",
+      "provider": "Alibaba"
+    },
+    {
+      "prompt": "vague",
+      "company": "HALCYON (knife-edge)",
+      "label": "HOLD",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "vague",
+      "company": "HALCYON (knife-edge)",
+      "label": "HOLD",
+      "provider": "StreamLake"
+    },
+    {
+      "prompt": "vague",
+      "company": "HALCYON (knife-edge)",
+      "label": "HOLD",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "vague",
+      "company": "HALCYON (knife-edge)",
+      "label": "HOLD",
+      "provider": "Novita"
+    },
+    {
+      "prompt": "vague",
+      "company": "HALCYON (knife-edge)",
+      "label": "HOLD",
+      "provider": "Parasail"
+    },
+    {
+      "prompt": "vague",
+      "company": "HALCYON (knife-edge)",
+      "label": "HOLD",
+      "provider": "Alibaba"
+    },
+    {
+      "prompt": "vague",
+      "company": "MERIDIAN (knife-edge)",
+      "label": "HOLD",
+      "provider": "Parasail"
+    },
+    {
+      "prompt": "vague",
+      "company": "MERIDIAN (knife-edge)",
+      "label": "HOLD",
+      "provider": "Parasail"
+    },
+    {
+      "prompt": "vague",
+      "company": "MERIDIAN (knife-edge)",
+      "label": "HOLD",
+      "provider": "Google"
+    },
+    {
+      "prompt": "vague",
+      "company": "MERIDIAN (knife-edge)",
+      "label": "HOLD",
+      "provider": "Parasail"
+    },
+    {
+      "prompt": "vague",
+      "company": "MERIDIAN (knife-edge)",
+      "label": "HOLD",
+      "provider": "Parasail"
+    },
+    {
+      "prompt": "vague",
+      "company": "MERIDIAN (knife-edge)",
+      "label": "HOLD",
+      "provider": "Parasail"
+    },
+    {
+      "prompt": "vague",
+      "company": "MERIDIAN (knife-edge)",
+      "label": "HOLD",
+      "provider": "Google"
+    },
+    {
+      "prompt": "vague",
+      "company": "MERIDIAN (knife-edge)",
+      "label": "HOLD",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "vague",
+      "company": "MERIDIAN (knife-edge)",
+      "label": "HOLD",
+      "provider": "Alibaba"
+    },
+    {
+      "prompt": "vague",
+      "company": "MERIDIAN (knife-edge)",
+      "label": "HOLD",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "vague",
+      "company": "MERIDIAN (knife-edge)",
+      "label": "HOLD",
+      "provider": "Novita"
+    },
+    {
+      "prompt": "vague",
+      "company": "MERIDIAN (knife-edge)",
+      "label": "HOLD",
+      "provider": "Alibaba"
+    },
+    {
+      "prompt": "vague",
+      "company": "MERIDIAN (knife-edge)",
+      "label": "HOLD",
+      "provider": "Parasail"
+    },
+    {
+      "prompt": "vague",
+      "company": "MERIDIAN (knife-edge)",
+      "label": "HOLD",
+      "provider": "Novita"
+    },
+    {
+      "prompt": "vague",
+      "company": "MERIDIAN (knife-edge)",
+      "label": "HOLD",
+      "provider": "Parasail"
+    },
+    {
+      "prompt": "vague",
+      "company": "MERIDIAN (knife-edge)",
+      "label": "HOLD",
+      "provider": "Parasail"
+    },
+    {
+      "prompt": "vague",
+      "company": "MERIDIAN (knife-edge)",
+      "label": "HOLD",
+      "provider": "Novita"
+    },
+    {
+      "prompt": "vague",
+      "company": "MERIDIAN (knife-edge)",
+      "label": "HOLD",
+      "provider": "Parasail"
+    },
+    {
+      "prompt": "vague",
+      "company": "MERIDIAN (knife-edge)",
+      "label": "HOLD",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "vague",
+      "company": "MERIDIAN (knife-edge)",
+      "label": "HOLD",
+      "provider": "StreamLake"
+    },
+    {
+      "prompt": "vague",
+      "company": "MERIDIAN (knife-edge)",
+      "label": "HOLD",
+      "provider": "Novita"
+    },
+    {
+      "prompt": "vague",
+      "company": "MERIDIAN (knife-edge)",
+      "label": "HOLD",
+      "provider": "Parasail"
+    },
+    {
+      "prompt": "vague",
+      "company": "MERIDIAN (knife-edge)",
+      "label": "HOLD",
+      "provider": "Parasail"
+    },
+    {
+      "prompt": "vague",
+      "company": "MERIDIAN (knife-edge)",
+      "label": "HOLD",
+      "provider": "Parasail"
+    },
+    {
+      "prompt": "vague",
+      "company": "MERIDIAN (knife-edge)",
+      "label": "HOLD",
+      "provider": "Parasail"
+    },
+    {
+      "prompt": "vague",
+      "company": "MERIDIAN (knife-edge)",
+      "label": "HOLD",
+      "provider": "Parasail"
+    },
+    {
+      "prompt": "vague",
+      "company": "MERIDIAN (knife-edge)",
+      "label": "HOLD",
+      "provider": "Parasail"
+    },
+    {
+      "prompt": "vague",
+      "company": "MERIDIAN (knife-edge)",
+      "label": "HOLD",
+      "provider": "Parasail"
+    },
+    {
+      "prompt": "vague",
+      "company": "MERIDIAN (knife-edge)",
+      "label": "HOLD",
+      "provider": "Parasail"
+    },
+    {
+      "prompt": "vague",
+      "company": "MERIDIAN (knife-edge)",
+      "label": "HOLD",
+      "provider": "StreamLake"
+    },
+    {
+      "prompt": "vague",
+      "company": "TESSERA (knife-edge)",
+      "label": "HOLD",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "vague",
+      "company": "TESSERA (knife-edge)",
+      "label": "HOLD",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "vague",
+      "company": "TESSERA (knife-edge)",
+      "label": "HOLD",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "vague",
+      "company": "TESSERA (knife-edge)",
+      "label": "HOLD",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "vague",
+      "company": "TESSERA (knife-edge)",
+      "label": "HOLD",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "vague",
+      "company": "TESSERA (knife-edge)",
+      "label": "HOLD",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "vague",
+      "company": "TESSERA (knife-edge)",
+      "label": "HOLD",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "vague",
+      "company": "TESSERA (knife-edge)",
+      "label": "HOLD",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "vague",
+      "company": "TESSERA (knife-edge)",
+      "label": "HOLD",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "vague",
+      "company": "TESSERA (knife-edge)",
+      "label": "HOLD",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "vague",
+      "company": "TESSERA (knife-edge)",
+      "label": "HOLD",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "vague",
+      "company": "TESSERA (knife-edge)",
+      "label": "HOLD",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "vague",
+      "company": "TESSERA (knife-edge)",
+      "label": "HOLD",
+      "provider": "Parasail"
+    },
+    {
+      "prompt": "vague",
+      "company": "TESSERA (knife-edge)",
+      "label": "HOLD",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "vague",
+      "company": "TESSERA (knife-edge)",
+      "label": "HOLD",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "vague",
+      "company": "TESSERA (knife-edge)",
+      "label": "HOLD",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "vague",
+      "company": "TESSERA (knife-edge)",
+      "label": "HOLD",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "vague",
+      "company": "TESSERA (knife-edge)",
+      "label": "HOLD",
+      "provider": "StreamLake"
+    },
+    {
+      "prompt": "vague",
+      "company": "TESSERA (knife-edge)",
+      "label": "HOLD",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "vague",
+      "company": "TESSERA (knife-edge)",
+      "label": "HOLD",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "vague",
+      "company": "TESSERA (knife-edge)",
+      "label": "HOLD",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "vague",
+      "company": "TESSERA (knife-edge)",
+      "label": "HOLD",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "vague",
+      "company": "TESSERA (knife-edge)",
+      "label": "HOLD",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "vague",
+      "company": "TESSERA (knife-edge)",
+      "label": "HOLD",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "vague",
+      "company": "TESSERA (knife-edge)",
+      "label": "HOLD",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "vague",
+      "company": "TESSERA (knife-edge)",
+      "label": "HOLD",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "vague",
+      "company": "TESSERA (knife-edge)",
+      "label": "HOLD",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "vague",
+      "company": "TESSERA (knife-edge)",
+      "label": "HOLD",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "vague",
+      "company": "TESSERA (knife-edge)",
+      "label": "HOLD",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "vague",
+      "company": "TESSERA (knife-edge)",
+      "label": "HOLD",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "vague",
+      "company": "QUILL (knife-edge)",
+      "label": "HOLD",
+      "provider": "Parasail"
+    },
+    {
+      "prompt": "vague",
+      "company": "QUILL (knife-edge)",
+      "label": "HOLD",
+      "provider": "Parasail"
+    },
+    {
+      "prompt": "vague",
+      "company": "QUILL (knife-edge)",
+      "label": "HOLD",
+      "provider": "Parasail"
+    },
+    {
+      "prompt": "vague",
+      "company": "QUILL (knife-edge)",
+      "label": "HOLD",
+      "provider": "Novita"
+    },
+    {
+      "prompt": "vague",
+      "company": "QUILL (knife-edge)",
+      "label": "HOLD",
+      "provider": "Parasail"
+    },
+    {
+      "prompt": "vague",
+      "company": "QUILL (knife-edge)",
+      "label": "HOLD",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "vague",
+      "company": "QUILL (knife-edge)",
+      "label": "HOLD",
+      "provider": "Parasail"
+    },
+    {
+      "prompt": "vague",
+      "company": "QUILL (knife-edge)",
+      "label": "HOLD",
+      "provider": "Google"
+    },
+    {
+      "prompt": "vague",
+      "company": "QUILL (knife-edge)",
+      "label": "HOLD",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "vague",
+      "company": "QUILL (knife-edge)",
+      "label": "HOLD",
+      "provider": "Parasail"
+    },
+    {
+      "prompt": "vague",
+      "company": "QUILL (knife-edge)",
+      "label": "HOLD",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "vague",
+      "company": "QUILL (knife-edge)",
+      "label": "HOLD",
+      "provider": "Alibaba"
+    },
+    {
+      "prompt": "vague",
+      "company": "QUILL (knife-edge)",
+      "label": "HOLD",
+      "provider": "Google"
+    },
+    {
+      "prompt": "vague",
+      "company": "QUILL (knife-edge)",
+      "label": "HOLD",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "vague",
+      "company": "QUILL (knife-edge)",
+      "label": "HOLD",
+      "provider": "Alibaba"
+    },
+    {
+      "prompt": "vague",
+      "company": "QUILL (knife-edge)",
+      "label": "HOLD",
+      "provider": "Parasail"
+    },
+    {
+      "prompt": "vague",
+      "company": "QUILL (knife-edge)",
+      "label": "HOLD",
+      "provider": "Parasail"
+    },
+    {
+      "prompt": "vague",
+      "company": "QUILL (knife-edge)",
+      "label": "HOLD",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "vague",
+      "company": "QUILL (knife-edge)",
+      "label": "HOLD",
+      "provider": "Parasail"
+    },
+    {
+      "prompt": "vague",
+      "company": "QUILL (knife-edge)",
+      "label": "HOLD",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "vague",
+      "company": "QUILL (knife-edge)",
+      "label": "HOLD",
+      "provider": "Parasail"
+    },
+    {
+      "prompt": "vague",
+      "company": "QUILL (knife-edge)",
+      "label": "HOLD",
+      "provider": "Google"
+    },
+    {
+      "prompt": "vague",
+      "company": "QUILL (knife-edge)",
+      "label": "HOLD",
+      "provider": "Novita"
+    },
+    {
+      "prompt": "vague",
+      "company": "QUILL (knife-edge)",
+      "label": "HOLD",
+      "provider": "Google"
+    },
+    {
+      "prompt": "vague",
+      "company": "QUILL (knife-edge)",
+      "label": "HOLD",
+      "provider": "Google"
+    },
+    {
+      "prompt": "vague",
+      "company": "QUILL (knife-edge)",
+      "label": "HOLD",
+      "provider": "Novita"
+    },
+    {
+      "prompt": "vague",
+      "company": "QUILL (knife-edge)",
+      "label": "HOLD",
+      "provider": "Parasail"
+    },
+    {
+      "prompt": "vague",
+      "company": "QUILL (knife-edge)",
+      "label": "HOLD",
+      "provider": "StreamLake"
+    },
+    {
+      "prompt": "vague",
+      "company": "QUILL (knife-edge)",
+      "label": "HOLD",
+      "provider": "Novita"
+    },
+    {
+      "prompt": "vague",
+      "company": "QUILL (knife-edge)",
+      "label": "HOLD",
+      "provider": "Google"
+    },
+    {
+      "prompt": "forced",
+      "company": "NOVA (clear buy)",
+      "label": "BUY",
+      "provider": "Parasail"
+    },
+    {
+      "prompt": "forced",
+      "company": "NOVA (clear buy)",
+      "label": "BUY",
+      "provider": "Parasail"
+    },
+    {
+      "prompt": "forced",
+      "company": "NOVA (clear buy)",
+      "label": "BUY",
+      "provider": "Google"
+    },
+    {
+      "prompt": "forced",
+      "company": "NOVA (clear buy)",
+      "label": "BUY",
+      "provider": "Novita"
+    },
+    {
+      "prompt": "forced",
+      "company": "NOVA (clear buy)",
+      "label": "BUY",
+      "provider": "Novita"
+    },
+    {
+      "prompt": "forced",
+      "company": "NOVA (clear buy)",
+      "label": "BUY",
+      "provider": "Alibaba"
+    },
+    {
+      "prompt": "forced",
+      "company": "NOVA (clear buy)",
+      "label": "BUY",
+      "provider": "Alibaba"
+    },
+    {
+      "prompt": "forced",
+      "company": "NOVA (clear buy)",
+      "label": "BUY",
+      "provider": "Novita"
+    },
+    {
+      "prompt": "forced",
+      "company": "NOVA (clear buy)",
+      "label": "BUY",
+      "provider": "Alibaba"
+    },
+    {
+      "prompt": "forced",
+      "company": "NOVA (clear buy)",
+      "label": "BUY",
+      "provider": "Parasail"
+    },
+    {
+      "prompt": "forced",
+      "company": "NOVA (clear buy)",
+      "label": "BUY",
+      "provider": "Parasail"
+    },
+    {
+      "prompt": "forced",
+      "company": "NOVA (clear buy)",
+      "label": "BUY",
+      "provider": "Parasail"
+    },
+    {
+      "prompt": "forced",
+      "company": "NOVA (clear buy)",
+      "label": "BUY",
+      "provider": "Parasail"
+    },
+    {
+      "prompt": "forced",
+      "company": "NOVA (clear buy)",
+      "label": "BUY",
+      "provider": "Alibaba"
+    },
+    {
+      "prompt": "forced",
+      "company": "NOVA (clear buy)",
+      "label": "BUY",
+      "provider": "Parasail"
+    },
+    {
+      "prompt": "forced",
+      "company": "NOVA (clear buy)",
+      "label": "BUY",
+      "provider": "Novita"
+    },
+    {
+      "prompt": "forced",
+      "company": "NOVA (clear buy)",
+      "label": "BUY",
+      "provider": "Novita"
+    },
+    {
+      "prompt": "forced",
+      "company": "NOVA (clear buy)",
+      "label": "BUY",
+      "provider": "Google"
+    },
+    {
+      "prompt": "forced",
+      "company": "NOVA (clear buy)",
+      "label": "BUY",
+      "provider": "Novita"
+    },
+    {
+      "prompt": "forced",
+      "company": "NOVA (clear buy)",
+      "label": "BUY",
+      "provider": "Novita"
+    },
+    {
+      "prompt": "forced",
+      "company": "NOVA (clear buy)",
+      "label": "BUY",
+      "provider": "Google"
+    },
+    {
+      "prompt": "forced",
+      "company": "NOVA (clear buy)",
+      "label": "BUY",
+      "provider": "Novita"
+    },
+    {
+      "prompt": "forced",
+      "company": "NOVA (clear buy)",
+      "label": "BUY",
+      "provider": "Parasail"
+    },
+    {
+      "prompt": "forced",
+      "company": "NOVA (clear buy)",
+      "label": "BUY",
+      "provider": "Alibaba"
+    },
+    {
+      "prompt": "forced",
+      "company": "NOVA (clear buy)",
+      "label": "BUY",
+      "provider": "Alibaba"
+    },
+    {
+      "prompt": "forced",
+      "company": "NOVA (clear buy)",
+      "label": "BUY",
+      "provider": "Google"
+    },
+    {
+      "prompt": "forced",
+      "company": "NOVA (clear buy)",
+      "label": "BUY",
+      "provider": "Alibaba"
+    },
+    {
+      "prompt": "forced",
+      "company": "NOVA (clear buy)",
+      "label": "BUY",
+      "provider": "Google"
+    },
+    {
+      "prompt": "forced",
+      "company": "NOVA (clear buy)",
+      "label": "BUY",
+      "provider": "Novita"
+    },
+    {
+      "prompt": "forced",
+      "company": "NOVA (clear buy)",
+      "label": "BUY",
+      "provider": "Novita"
+    },
+    {
+      "prompt": "forced",
+      "company": "ORBIT (clear buy)",
+      "label": "BUY",
+      "provider": "Novita"
+    },
+    {
+      "prompt": "forced",
+      "company": "ORBIT (clear buy)",
+      "label": "BUY",
+      "provider": "Novita"
+    },
+    {
+      "prompt": "forced",
+      "company": "ORBIT (clear buy)",
+      "label": "BUY",
+      "provider": "Alibaba"
+    },
+    {
+      "prompt": "forced",
+      "company": "ORBIT (clear buy)",
+      "label": "BUY",
+      "provider": "Novita"
+    },
+    {
+      "prompt": "forced",
+      "company": "ORBIT (clear buy)",
+      "label": "BUY",
+      "provider": "Google"
+    },
+    {
+      "prompt": "forced",
+      "company": "ORBIT (clear buy)",
+      "label": "BUY",
+      "provider": "Alibaba"
+    },
+    {
+      "prompt": "forced",
+      "company": "ORBIT (clear buy)",
+      "label": "BUY",
+      "provider": "Google"
+    },
+    {
+      "prompt": "forced",
+      "company": "ORBIT (clear buy)",
+      "label": "BUY",
+      "provider": "Alibaba"
+    },
+    {
+      "prompt": "forced",
+      "company": "ORBIT (clear buy)",
+      "label": "BUY",
+      "provider": "Novita"
+    },
+    {
+      "prompt": "forced",
+      "company": "ORBIT (clear buy)",
+      "label": "BUY",
+      "provider": "Novita"
+    },
+    {
+      "prompt": "forced",
+      "company": "ORBIT (clear buy)",
+      "label": "BUY",
+      "provider": "Alibaba"
+    },
+    {
+      "prompt": "forced",
+      "company": "ORBIT (clear buy)",
+      "label": "BUY",
+      "provider": "Alibaba"
+    },
+    {
+      "prompt": "forced",
+      "company": "ORBIT (clear buy)",
+      "label": "BUY",
+      "provider": "Novita"
+    },
+    {
+      "prompt": "forced",
+      "company": "ORBIT (clear buy)",
+      "label": "BUY",
+      "provider": "Google"
+    },
+    {
+      "prompt": "forced",
+      "company": "ORBIT (clear buy)",
+      "label": "BUY",
+      "provider": "Novita"
+    },
+    {
+      "prompt": "forced",
+      "company": "ORBIT (clear buy)",
+      "label": "BUY",
+      "provider": "Google"
+    },
+    {
+      "prompt": "forced",
+      "company": "ORBIT (clear buy)",
+      "label": "BUY",
+      "provider": "Alibaba"
+    },
+    {
+      "prompt": "forced",
+      "company": "ORBIT (clear buy)",
+      "label": "BUY",
+      "provider": "Google"
+    },
+    {
+      "prompt": "forced",
+      "company": "ORBIT (clear buy)",
+      "label": "BUY",
+      "provider": "Novita"
+    },
+    {
+      "prompt": "forced",
+      "company": "ORBIT (clear buy)",
+      "label": "BUY",
+      "provider": "StreamLake"
+    },
+    {
+      "prompt": "forced",
+      "company": "ORBIT (clear buy)",
+      "label": "BUY",
+      "provider": "Novita"
+    },
+    {
+      "prompt": "forced",
+      "company": "ORBIT (clear buy)",
+      "label": "BUY",
+      "provider": "Novita"
+    },
+    {
+      "prompt": "forced",
+      "company": "ORBIT (clear buy)",
+      "label": "BUY",
+      "provider": "Google"
+    },
+    {
+      "prompt": "forced",
+      "company": "ORBIT (clear buy)",
+      "label": "BUY",
+      "provider": "Novita"
+    },
+    {
+      "prompt": "forced",
+      "company": "ORBIT (clear buy)",
+      "label": "BUY",
+      "provider": "Novita"
+    },
+    {
+      "prompt": "forced",
+      "company": "ORBIT (clear buy)",
+      "label": "BUY",
+      "provider": "Novita"
+    },
+    {
+      "prompt": "forced",
+      "company": "ORBIT (clear buy)",
+      "label": "BUY",
+      "provider": "StreamLake"
+    },
+    {
+      "prompt": "forced",
+      "company": "ORBIT (clear buy)",
+      "label": "BUY",
+      "provider": "Novita"
+    },
+    {
+      "prompt": "forced",
+      "company": "ORBIT (clear buy)",
+      "label": "BUY",
+      "provider": "Novita"
+    },
+    {
+      "prompt": "forced",
+      "company": "ORBIT (clear buy)",
+      "label": "BUY",
+      "provider": "StreamLake"
+    },
+    {
+      "prompt": "forced",
+      "company": "DUSKWARE (clear sell)",
+      "label": "SELL",
+      "provider": "Novita"
+    },
+    {
+      "prompt": "forced",
+      "company": "DUSKWARE (clear sell)",
+      "label": "SELL",
+      "provider": "Novita"
+    },
+    {
+      "prompt": "forced",
+      "company": "DUSKWARE (clear sell)",
+      "label": "SELL",
+      "provider": "Alibaba"
+    },
+    {
+      "prompt": "forced",
+      "company": "DUSKWARE (clear sell)",
+      "label": "SELL",
+      "provider": "StreamLake"
+    },
+    {
+      "prompt": "forced",
+      "company": "DUSKWARE (clear sell)",
+      "label": "SELL",
+      "provider": "Novita"
+    },
+    {
+      "prompt": "forced",
+      "company": "DUSKWARE (clear sell)",
+      "label": "SELL",
+      "provider": "Novita"
+    },
+    {
+      "prompt": "forced",
+      "company": "DUSKWARE (clear sell)",
+      "label": "SELL",
+      "provider": "Alibaba"
+    },
+    {
+      "prompt": "forced",
+      "company": "DUSKWARE (clear sell)",
+      "label": "SELL",
+      "provider": "Novita"
+    },
+    {
+      "prompt": "forced",
+      "company": "DUSKWARE (clear sell)",
+      "label": "SELL",
+      "provider": "Alibaba"
+    },
+    {
+      "prompt": "forced",
+      "company": "DUSKWARE (clear sell)",
+      "label": "SELL",
+      "provider": "StreamLake"
+    },
+    {
+      "prompt": "forced",
+      "company": "DUSKWARE (clear sell)",
+      "label": "SELL",
+      "provider": "Parasail"
+    },
+    {
+      "prompt": "forced",
+      "company": "DUSKWARE (clear sell)",
+      "label": "SELL",
+      "provider": "Parasail"
+    },
+    {
+      "prompt": "forced",
+      "company": "DUSKWARE (clear sell)",
+      "label": "SELL",
+      "provider": "Novita"
+    },
+    {
+      "prompt": "forced",
+      "company": "DUSKWARE (clear sell)",
+      "label": "SELL",
+      "provider": "StreamLake"
+    },
+    {
+      "prompt": "forced",
+      "company": "DUSKWARE (clear sell)",
+      "label": "SELL",
+      "provider": "Google"
+    },
+    {
+      "prompt": "forced",
+      "company": "DUSKWARE (clear sell)",
+      "label": "SELL",
+      "provider": "Parasail"
+    },
+    {
+      "prompt": "forced",
+      "company": "DUSKWARE (clear sell)",
+      "label": "SELL",
+      "provider": "Alibaba"
+    },
+    {
+      "prompt": "forced",
+      "company": "DUSKWARE (clear sell)",
+      "label": "SELL",
+      "provider": "Novita"
+    },
+    {
+      "prompt": "forced",
+      "company": "DUSKWARE (clear sell)",
+      "label": "SELL",
+      "provider": "Google"
+    },
+    {
+      "prompt": "forced",
+      "company": "DUSKWARE (clear sell)",
+      "label": "SELL",
+      "provider": "Alibaba"
+    },
+    {
+      "prompt": "forced",
+      "company": "DUSKWARE (clear sell)",
+      "label": "SELL",
+      "provider": "Alibaba"
+    },
+    {
+      "prompt": "forced",
+      "company": "DUSKWARE (clear sell)",
+      "label": "SELL",
+      "provider": "Alibaba"
+    },
+    {
+      "prompt": "forced",
+      "company": "DUSKWARE (clear sell)",
+      "label": "SELL",
+      "provider": "Parasail"
+    },
+    {
+      "prompt": "forced",
+      "company": "DUSKWARE (clear sell)",
+      "label": "SELL",
+      "provider": "Parasail"
+    },
+    {
+      "prompt": "forced",
+      "company": "DUSKWARE (clear sell)",
+      "label": "SELL",
+      "provider": "Parasail"
+    },
+    {
+      "prompt": "forced",
+      "company": "DUSKWARE (clear sell)",
+      "label": "SELL",
+      "provider": "StreamLake"
+    },
+    {
+      "prompt": "forced",
+      "company": "DUSKWARE (clear sell)",
+      "label": "SELL",
+      "provider": "Alibaba"
+    },
+    {
+      "prompt": "forced",
+      "company": "DUSKWARE (clear sell)",
+      "label": "SELL",
+      "provider": "Alibaba"
+    },
+    {
+      "prompt": "forced",
+      "company": "DUSKWARE (clear sell)",
+      "label": "SELL",
+      "provider": "Novita"
+    },
+    {
+      "prompt": "forced",
+      "company": "DUSKWARE (clear sell)",
+      "label": "SELL",
+      "provider": "StreamLake"
+    },
+    {
+      "prompt": "forced",
+      "company": "RUSTLINE (clear sell)",
+      "label": "SELL",
+      "provider": "Parasail"
+    },
+    {
+      "prompt": "forced",
+      "company": "RUSTLINE (clear sell)",
+      "label": "SELL",
+      "provider": "Novita"
+    },
+    {
+      "prompt": "forced",
+      "company": "RUSTLINE (clear sell)",
+      "label": "SELL",
+      "provider": "Parasail"
+    },
+    {
+      "prompt": "forced",
+      "company": "RUSTLINE (clear sell)",
+      "label": "SELL",
+      "provider": "Alibaba"
+    },
+    {
+      "prompt": "forced",
+      "company": "RUSTLINE (clear sell)",
+      "label": "SELL",
+      "provider": "Parasail"
+    },
+    {
+      "prompt": "forced",
+      "company": "RUSTLINE (clear sell)",
+      "label": "SELL",
+      "provider": "Parasail"
+    },
+    {
+      "prompt": "forced",
+      "company": "RUSTLINE (clear sell)",
+      "label": "SELL",
+      "provider": "Novita"
+    },
+    {
+      "prompt": "forced",
+      "company": "RUSTLINE (clear sell)",
+      "label": "SELL",
+      "provider": "Novita"
+    },
+    {
+      "prompt": "forced",
+      "company": "RUSTLINE (clear sell)",
+      "label": "SELL",
+      "provider": "Alibaba"
+    },
+    {
+      "prompt": "forced",
+      "company": "RUSTLINE (clear sell)",
+      "label": "SELL",
+      "provider": "Parasail"
+    },
+    {
+      "prompt": "forced",
+      "company": "RUSTLINE (clear sell)",
+      "label": "SELL",
+      "provider": "Parasail"
+    },
+    {
+      "prompt": "forced",
+      "company": "RUSTLINE (clear sell)",
+      "label": "SELL",
+      "provider": "Novita"
+    },
+    {
+      "prompt": "forced",
+      "company": "RUSTLINE (clear sell)",
+      "label": "SELL",
+      "provider": "Alibaba"
+    },
+    {
+      "prompt": "forced",
+      "company": "RUSTLINE (clear sell)",
+      "label": "SELL",
+      "provider": "Novita"
+    },
+    {
+      "prompt": "forced",
+      "company": "RUSTLINE (clear sell)",
+      "label": "SELL",
+      "provider": "StreamLake"
+    },
+    {
+      "prompt": "forced",
+      "company": "RUSTLINE (clear sell)",
+      "label": "SELL",
+      "provider": "Novita"
+    },
+    {
+      "prompt": "forced",
+      "company": "RUSTLINE (clear sell)",
+      "label": "SELL",
+      "provider": "Alibaba"
+    },
+    {
+      "prompt": "forced",
+      "company": "RUSTLINE (clear sell)",
+      "label": "SELL",
+      "provider": "StreamLake"
+    },
+    {
+      "prompt": "forced",
+      "company": "RUSTLINE (clear sell)",
+      "label": "SELL",
+      "provider": "Novita"
+    },
+    {
+      "prompt": "forced",
+      "company": "RUSTLINE (clear sell)",
+      "label": "SELL",
+      "provider": "Novita"
+    },
+    {
+      "prompt": "forced",
+      "company": "RUSTLINE (clear sell)",
+      "label": "SELL",
+      "provider": "Novita"
+    },
+    {
+      "prompt": "forced",
+      "company": "RUSTLINE (clear sell)",
+      "label": "SELL",
+      "provider": "Google"
+    },
+    {
+      "prompt": "forced",
+      "company": "RUSTLINE (clear sell)",
+      "label": "SELL",
+      "provider": "Google"
+    },
+    {
+      "prompt": "forced",
+      "company": "RUSTLINE (clear sell)",
+      "label": "SELL",
+      "provider": "Google"
+    },
+    {
+      "prompt": "forced",
+      "company": "RUSTLINE (clear sell)",
+      "label": "SELL",
+      "provider": "Google"
+    },
+    {
+      "prompt": "forced",
+      "company": "RUSTLINE (clear sell)",
+      "label": "SELL",
+      "provider": "Novita"
+    },
+    {
+      "prompt": "forced",
+      "company": "RUSTLINE (clear sell)",
+      "label": "SELL",
+      "provider": "Alibaba"
+    },
+    {
+      "prompt": "forced",
+      "company": "RUSTLINE (clear sell)",
+      "label": "SELL",
+      "provider": "Google"
+    },
+    {
+      "prompt": "forced",
+      "company": "RUSTLINE (clear sell)",
+      "label": "SELL",
+      "provider": "Novita"
+    },
+    {
+      "prompt": "forced",
+      "company": "RUSTLINE (clear sell)",
+      "label": "SELL",
+      "provider": "Parasail"
+    },
+    {
+      "prompt": "forced",
+      "company": "HALCYON (knife-edge)",
+      "label": "SELL",
+      "provider": "Google"
+    },
+    {
+      "prompt": "forced",
+      "company": "HALCYON (knife-edge)",
+      "label": "SELL",
+      "provider": "Google"
+    },
+    {
+      "prompt": "forced",
+      "company": "HALCYON (knife-edge)",
+      "label": "SELL",
+      "provider": "Novita"
+    },
+    {
+      "prompt": "forced",
+      "company": "HALCYON (knife-edge)",
+      "label": "SELL",
+      "provider": "Novita"
+    },
+    {
+      "prompt": "forced",
+      "company": "HALCYON (knife-edge)",
+      "label": "SELL",
+      "provider": "Novita"
+    },
+    {
+      "prompt": "forced",
+      "company": "HALCYON (knife-edge)",
+      "label": "SELL",
+      "provider": "Google"
+    },
+    {
+      "prompt": "forced",
+      "company": "HALCYON (knife-edge)",
+      "label": "SELL",
+      "provider": "Alibaba"
+    },
+    {
+      "prompt": "forced",
+      "company": "HALCYON (knife-edge)",
+      "label": "SELL",
+      "provider": "Novita"
+    },
+    {
+      "prompt": "forced",
+      "company": "HALCYON (knife-edge)",
+      "label": "SELL",
+      "provider": "StreamLake"
+    },
+    {
+      "prompt": "forced",
+      "company": "HALCYON (knife-edge)",
+      "label": "SELL",
+      "provider": "Novita"
+    },
+    {
+      "prompt": "forced",
+      "company": "HALCYON (knife-edge)",
+      "label": "SELL",
+      "provider": "Google"
+    },
+    {
+      "prompt": "forced",
+      "company": "HALCYON (knife-edge)",
+      "label": "SELL",
+      "provider": "Novita"
+    },
+    {
+      "prompt": "forced",
+      "company": "HALCYON (knife-edge)",
+      "label": "SELL",
+      "provider": "Alibaba"
+    },
+    {
+      "prompt": "forced",
+      "company": "HALCYON (knife-edge)",
+      "label": "SELL",
+      "provider": "Novita"
+    },
+    {
+      "prompt": "forced",
+      "company": "HALCYON (knife-edge)",
+      "label": "SELL",
+      "provider": "Alibaba"
+    },
+    {
+      "prompt": "forced",
+      "company": "HALCYON (knife-edge)",
+      "label": "SELL",
+      "provider": "Alibaba"
+    },
+    {
+      "prompt": "forced",
+      "company": "HALCYON (knife-edge)",
+      "label": "SELL",
+      "provider": "Novita"
+    },
+    {
+      "prompt": "forced",
+      "company": "HALCYON (knife-edge)",
+      "label": "SELL",
+      "provider": "Alibaba"
+    },
+    {
+      "prompt": "forced",
+      "company": "HALCYON (knife-edge)",
+      "label": "SELL",
+      "provider": "Alibaba"
+    },
+    {
+      "prompt": "forced",
+      "company": "HALCYON (knife-edge)",
+      "label": "SELL",
+      "provider": "Alibaba"
+    },
+    {
+      "prompt": "forced",
+      "company": "HALCYON (knife-edge)",
+      "label": "SELL",
+      "provider": "Alibaba"
+    },
+    {
+      "prompt": "forced",
+      "company": "HALCYON (knife-edge)",
+      "label": "SELL",
+      "provider": "Novita"
+    },
+    {
+      "prompt": "forced",
+      "company": "HALCYON (knife-edge)",
+      "label": "SELL",
+      "provider": "Alibaba"
+    },
+    {
+      "prompt": "forced",
+      "company": "HALCYON (knife-edge)",
+      "label": "SELL",
+      "provider": "Novita"
+    },
+    {
+      "prompt": "forced",
+      "company": "HALCYON (knife-edge)",
+      "label": "SELL",
+      "provider": "Novita"
+    },
+    {
+      "prompt": "forced",
+      "company": "HALCYON (knife-edge)",
+      "label": "SELL",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "forced",
+      "company": "HALCYON (knife-edge)",
+      "label": "SELL",
+      "provider": "Alibaba"
+    },
+    {
+      "prompt": "forced",
+      "company": "HALCYON (knife-edge)",
+      "label": "SELL",
+      "provider": "Novita"
+    },
+    {
+      "prompt": "forced",
+      "company": "HALCYON (knife-edge)",
+      "label": "SELL",
+      "provider": "Novita"
+    },
+    {
+      "prompt": "forced",
+      "company": "HALCYON (knife-edge)",
+      "label": "SELL",
+      "provider": "Novita"
+    },
+    {
+      "prompt": "forced",
+      "company": "MERIDIAN (knife-edge)",
+      "label": "BUY",
+      "provider": "Novita"
+    },
+    {
+      "prompt": "forced",
+      "company": "MERIDIAN (knife-edge)",
+      "label": "BUY",
+      "provider": "Google"
+    },
+    {
+      "prompt": "forced",
+      "company": "MERIDIAN (knife-edge)",
+      "label": "BUY",
+      "provider": "Novita"
+    },
+    {
+      "prompt": "forced",
+      "company": "MERIDIAN (knife-edge)",
+      "label": "BUY",
+      "provider": "Novita"
+    },
+    {
+      "prompt": "forced",
+      "company": "MERIDIAN (knife-edge)",
+      "label": "BUY",
+      "provider": "Novita"
+    },
+    {
+      "prompt": "forced",
+      "company": "MERIDIAN (knife-edge)",
+      "label": "BUY",
+      "provider": "Google"
+    },
+    {
+      "prompt": "forced",
+      "company": "MERIDIAN (knife-edge)",
+      "label": "BUY",
+      "provider": "Google"
+    },
+    {
+      "prompt": "forced",
+      "company": "MERIDIAN (knife-edge)",
+      "label": "BUY",
+      "provider": "Alibaba"
+    },
+    {
+      "prompt": "forced",
+      "company": "MERIDIAN (knife-edge)",
+      "label": "BUY",
+      "provider": "Novita"
+    },
+    {
+      "prompt": "forced",
+      "company": "MERIDIAN (knife-edge)",
+      "label": "BUY",
+      "provider": "Google"
+    },
+    {
+      "prompt": "forced",
+      "company": "MERIDIAN (knife-edge)",
+      "label": "BUY",
+      "provider": "Google"
+    },
+    {
+      "prompt": "forced",
+      "company": "MERIDIAN (knife-edge)",
+      "label": "BUY",
+      "provider": "Google"
+    },
+    {
+      "prompt": "forced",
+      "company": "MERIDIAN (knife-edge)",
+      "label": "BUY",
+      "provider": "Novita"
+    },
+    {
+      "prompt": "forced",
+      "company": "MERIDIAN (knife-edge)",
+      "label": "BUY",
+      "provider": "Novita"
+    },
+    {
+      "prompt": "forced",
+      "company": "MERIDIAN (knife-edge)",
+      "label": "BUY",
+      "provider": "Alibaba"
+    },
+    {
+      "prompt": "forced",
+      "company": "MERIDIAN (knife-edge)",
+      "label": "BUY",
+      "provider": "Google"
+    },
+    {
+      "prompt": "forced",
+      "company": "MERIDIAN (knife-edge)",
+      "label": "BUY",
+      "provider": "Google"
+    },
+    {
+      "prompt": "forced",
+      "company": "MERIDIAN (knife-edge)",
+      "label": "BUY",
+      "provider": "Google"
+    },
+    {
+      "prompt": "forced",
+      "company": "MERIDIAN (knife-edge)",
+      "label": "BUY",
+      "provider": "Alibaba"
+    },
+    {
+      "prompt": "forced",
+      "company": "MERIDIAN (knife-edge)",
+      "label": "BUY",
+      "provider": "Novita"
+    },
+    {
+      "prompt": "forced",
+      "company": "MERIDIAN (knife-edge)",
+      "label": "BUY",
+      "provider": "Alibaba"
+    },
+    {
+      "prompt": "forced",
+      "company": "MERIDIAN (knife-edge)",
+      "label": "BUY",
+      "provider": "Alibaba"
+    },
+    {
+      "prompt": "forced",
+      "company": "MERIDIAN (knife-edge)",
+      "label": "BUY",
+      "provider": "Google"
+    },
+    {
+      "prompt": "forced",
+      "company": "MERIDIAN (knife-edge)",
+      "label": "BUY",
+      "provider": "Novita"
+    },
+    {
+      "prompt": "forced",
+      "company": "MERIDIAN (knife-edge)",
+      "label": "BUY",
+      "provider": "Alibaba"
+    },
+    {
+      "prompt": "forced",
+      "company": "MERIDIAN (knife-edge)",
+      "label": "BUY",
+      "provider": "Novita"
+    },
+    {
+      "prompt": "forced",
+      "company": "MERIDIAN (knife-edge)",
+      "label": "BUY",
+      "provider": "Alibaba"
+    },
+    {
+      "prompt": "forced",
+      "company": "MERIDIAN (knife-edge)",
+      "label": "BUY",
+      "provider": "Google"
+    },
+    {
+      "prompt": "forced",
+      "company": "MERIDIAN (knife-edge)",
+      "label": "BUY",
+      "provider": "Novita"
+    },
+    {
+      "prompt": "forced",
+      "company": "MERIDIAN (knife-edge)",
+      "label": "BUY",
+      "provider": "Alibaba"
+    },
+    {
+      "prompt": "forced",
+      "company": "TESSERA (knife-edge)",
+      "label": "SELL",
+      "provider": "Alibaba"
+    },
+    {
+      "prompt": "forced",
+      "company": "TESSERA (knife-edge)",
+      "label": "SELL",
+      "provider": "Alibaba"
+    },
+    {
+      "prompt": "forced",
+      "company": "TESSERA (knife-edge)",
+      "label": "SELL",
+      "provider": "StreamLake"
+    },
+    {
+      "prompt": "forced",
+      "company": "TESSERA (knife-edge)",
+      "label": "SELL",
+      "provider": "Novita"
+    },
+    {
+      "prompt": "forced",
+      "company": "TESSERA (knife-edge)",
+      "label": "SELL",
+      "provider": "Google"
+    },
+    {
+      "prompt": "forced",
+      "company": "TESSERA (knife-edge)",
+      "label": "SELL",
+      "provider": "Alibaba"
+    },
+    {
+      "prompt": "forced",
+      "company": "TESSERA (knife-edge)",
+      "label": "SELL",
+      "provider": "Alibaba"
+    },
+    {
+      "prompt": "forced",
+      "company": "TESSERA (knife-edge)",
+      "label": "SELL",
+      "provider": "StreamLake"
+    },
+    {
+      "prompt": "forced",
+      "company": "TESSERA (knife-edge)",
+      "label": "SELL",
+      "provider": "Google"
+    },
+    {
+      "prompt": "forced",
+      "company": "TESSERA (knife-edge)",
+      "label": "SELL",
+      "provider": "Google"
+    },
+    {
+      "prompt": "forced",
+      "company": "TESSERA (knife-edge)",
+      "label": "SELL",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "forced",
+      "company": "TESSERA (knife-edge)",
+      "label": "SELL",
+      "provider": "StreamLake"
+    },
+    {
+      "prompt": "forced",
+      "company": "TESSERA (knife-edge)",
+      "label": "SELL",
+      "provider": "Novita"
+    },
+    {
+      "prompt": "forced",
+      "company": "TESSERA (knife-edge)",
+      "label": "SELL",
+      "provider": "Alibaba"
+    },
+    {
+      "prompt": "forced",
+      "company": "TESSERA (knife-edge)",
+      "label": "SELL",
+      "provider": "Alibaba"
+    },
+    {
+      "prompt": "forced",
+      "company": "TESSERA (knife-edge)",
+      "label": "SELL",
+      "provider": "Alibaba"
+    },
+    {
+      "prompt": "forced",
+      "company": "TESSERA (knife-edge)",
+      "label": "SELL",
+      "provider": "Novita"
+    },
+    {
+      "prompt": "forced",
+      "company": "TESSERA (knife-edge)",
+      "label": "SELL",
+      "provider": "StreamLake"
+    },
+    {
+      "prompt": "forced",
+      "company": "TESSERA (knife-edge)",
+      "label": "SELL",
+      "provider": "Parasail"
+    },
+    {
+      "prompt": "forced",
+      "company": "TESSERA (knife-edge)",
+      "label": "SELL",
+      "provider": "Alibaba"
+    },
+    {
+      "prompt": "forced",
+      "company": "TESSERA (knife-edge)",
+      "label": "SELL",
+      "provider": "Novita"
+    },
+    {
+      "prompt": "forced",
+      "company": "TESSERA (knife-edge)",
+      "label": "SELL",
+      "provider": "Google"
+    },
+    {
+      "prompt": "forced",
+      "company": "TESSERA (knife-edge)",
+      "label": "SELL",
+      "provider": "Novita"
+    },
+    {
+      "prompt": "forced",
+      "company": "TESSERA (knife-edge)",
+      "label": "SELL",
+      "provider": "Alibaba"
+    },
+    {
+      "prompt": "forced",
+      "company": "TESSERA (knife-edge)",
+      "label": "SELL",
+      "provider": "Alibaba"
+    },
+    {
+      "prompt": "forced",
+      "company": "TESSERA (knife-edge)",
+      "label": "SELL",
+      "provider": "Parasail"
+    },
+    {
+      "prompt": "forced",
+      "company": "TESSERA (knife-edge)",
+      "label": "SELL",
+      "provider": "Alibaba"
+    },
+    {
+      "prompt": "forced",
+      "company": "TESSERA (knife-edge)",
+      "label": "SELL",
+      "provider": "Novita"
+    },
+    {
+      "prompt": "forced",
+      "company": "TESSERA (knife-edge)",
+      "label": "SELL",
+      "provider": "Alibaba"
+    },
+    {
+      "prompt": "forced",
+      "company": "TESSERA (knife-edge)",
+      "label": "SELL",
+      "provider": "Novita"
+    },
+    {
+      "prompt": "forced",
+      "company": "QUILL (knife-edge)",
+      "label": "BUY",
+      "provider": "Novita"
+    },
+    {
+      "prompt": "forced",
+      "company": "QUILL (knife-edge)",
+      "label": "BUY",
+      "provider": "Google"
+    },
+    {
+      "prompt": "forced",
+      "company": "QUILL (knife-edge)",
+      "label": "HOLD",
+      "provider": "Alibaba"
+    },
+    {
+      "prompt": "forced",
+      "company": "QUILL (knife-edge)",
+      "label": "BUY",
+      "provider": "Alibaba"
+    },
+    {
+      "prompt": "forced",
+      "company": "QUILL (knife-edge)",
+      "label": "BUY",
+      "provider": "Alibaba"
+    },
+    {
+      "prompt": "forced",
+      "company": "QUILL (knife-edge)",
+      "label": "BUY",
+      "provider": "Novita"
+    },
+    {
+      "prompt": "forced",
+      "company": "QUILL (knife-edge)",
+      "label": "BUY",
+      "provider": "Alibaba"
+    },
+    {
+      "prompt": "forced",
+      "company": "QUILL (knife-edge)",
+      "label": "BUY",
+      "provider": "Alibaba"
+    },
+    {
+      "prompt": "forced",
+      "company": "QUILL (knife-edge)",
+      "label": "BUY",
+      "provider": "Google"
+    },
+    {
+      "prompt": "forced",
+      "company": "QUILL (knife-edge)",
+      "label": "BUY",
+      "provider": "Alibaba"
+    },
+    {
+      "prompt": "forced",
+      "company": "QUILL (knife-edge)",
+      "label": "BUY",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "forced",
+      "company": "QUILL (knife-edge)",
+      "label": "BUY",
+      "provider": "Novita"
+    },
+    {
+      "prompt": "forced",
+      "company": "QUILL (knife-edge)",
+      "label": "BUY",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "forced",
+      "company": "QUILL (knife-edge)",
+      "label": "BUY",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "forced",
+      "company": "QUILL (knife-edge)",
+      "label": "HOLD",
+      "provider": "StreamLake"
+    },
+    {
+      "prompt": "forced",
+      "company": "QUILL (knife-edge)",
+      "label": "BUY",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "forced",
+      "company": "QUILL (knife-edge)",
+      "label": "BUY",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "forced",
+      "company": "QUILL (knife-edge)",
+      "label": "BUY",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "forced",
+      "company": "QUILL (knife-edge)",
+      "label": "BUY",
+      "provider": "Novita"
+    },
+    {
+      "prompt": "forced",
+      "company": "QUILL (knife-edge)",
+      "label": "HOLD",
+      "provider": "Parasail"
+    },
+    {
+      "prompt": "forced",
+      "company": "QUILL (knife-edge)",
+      "label": "BUY",
+      "provider": "Alibaba"
+    },
+    {
+      "prompt": "forced",
+      "company": "QUILL (knife-edge)",
+      "label": "BUY",
+      "provider": "Alibaba"
+    },
+    {
+      "prompt": "forced",
+      "company": "QUILL (knife-edge)",
+      "label": "BUY",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "forced",
+      "company": "QUILL (knife-edge)",
+      "label": "BUY",
+      "provider": "StreamLake"
+    },
+    {
+      "prompt": "forced",
+      "company": "QUILL (knife-edge)",
+      "label": "BUY",
+      "provider": "StreamLake"
+    },
+    {
+      "prompt": "forced",
+      "company": "QUILL (knife-edge)",
+      "label": "BUY",
+      "provider": "Alibaba"
+    },
+    {
+      "prompt": "forced",
+      "company": "QUILL (knife-edge)",
+      "label": "HOLD",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "forced",
+      "company": "QUILL (knife-edge)",
+      "label": "BUY",
+      "provider": "Novita"
+    },
+    {
+      "prompt": "forced",
+      "company": "QUILL (knife-edge)",
+      "label": "BUY",
+      "provider": "Alibaba"
+    },
+    {
+      "prompt": "forced",
+      "company": "QUILL (knife-edge)",
+      "label": "BUY",
+      "provider": "StreamLake"
+    },
+    {
+      "prompt": "clear",
+      "company": "NOVA (clear buy)",
+      "label": "BUY",
+      "provider": "Google"
+    },
+    {
+      "prompt": "clear",
+      "company": "NOVA (clear buy)",
+      "label": "BUY",
+      "provider": "Novita"
+    },
+    {
+      "prompt": "clear",
+      "company": "NOVA (clear buy)",
+      "label": "BUY",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "clear",
+      "company": "NOVA (clear buy)",
+      "label": "BUY",
+      "provider": "Novita"
+    },
+    {
+      "prompt": "clear",
+      "company": "NOVA (clear buy)",
+      "label": "BUY",
+      "provider": "Novita"
+    },
+    {
+      "prompt": "clear",
+      "company": "NOVA (clear buy)",
+      "label": "BUY",
+      "provider": "Novita"
+    },
+    {
+      "prompt": "clear",
+      "company": "NOVA (clear buy)",
+      "label": "BUY",
+      "provider": "Alibaba"
+    },
+    {
+      "prompt": "clear",
+      "company": "NOVA (clear buy)",
+      "label": "BUY",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "clear",
+      "company": "NOVA (clear buy)",
+      "label": "BUY",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "clear",
+      "company": "NOVA (clear buy)",
+      "label": "BUY",
+      "provider": "Novita"
+    },
+    {
+      "prompt": "clear",
+      "company": "NOVA (clear buy)",
+      "label": "BUY",
+      "provider": "StreamLake"
+    },
+    {
+      "prompt": "clear",
+      "company": "NOVA (clear buy)",
+      "label": "BUY",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "clear",
+      "company": "NOVA (clear buy)",
+      "label": "BUY",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "clear",
+      "company": "NOVA (clear buy)",
+      "label": "BUY",
+      "provider": "Novita"
+    },
+    {
+      "prompt": "clear",
+      "company": "NOVA (clear buy)",
+      "label": "BUY",
+      "provider": "StreamLake"
+    },
+    {
+      "prompt": "clear",
+      "company": "NOVA (clear buy)",
+      "label": "BUY",
+      "provider": "Novita"
+    },
+    {
+      "prompt": "clear",
+      "company": "NOVA (clear buy)",
+      "label": "BUY",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "clear",
+      "company": "NOVA (clear buy)",
+      "label": "BUY",
+      "provider": "StreamLake"
+    },
+    {
+      "prompt": "clear",
+      "company": "NOVA (clear buy)",
+      "label": "BUY",
+      "provider": "StreamLake"
+    },
+    {
+      "prompt": "clear",
+      "company": "NOVA (clear buy)",
+      "label": "BUY",
+      "provider": "StreamLake"
+    },
+    {
+      "prompt": "clear",
+      "company": "NOVA (clear buy)",
+      "label": "?1",
+      "provider": "Google"
+    },
+    {
+      "prompt": "clear",
+      "company": "NOVA (clear buy)",
+      "label": "BUY",
+      "provider": "Alibaba"
+    },
+    {
+      "prompt": "clear",
+      "company": "NOVA (clear buy)",
+      "label": "BUY",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "clear",
+      "company": "NOVA (clear buy)",
+      "label": "BUY",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "clear",
+      "company": "NOVA (clear buy)",
+      "label": "BUY",
+      "provider": "StreamLake"
+    },
+    {
+      "prompt": "clear",
+      "company": "NOVA (clear buy)",
+      "label": "BUY",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "clear",
+      "company": "NOVA (clear buy)",
+      "label": "BUY",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "clear",
+      "company": "NOVA (clear buy)",
+      "label": "BUY",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "clear",
+      "company": "NOVA (clear buy)",
+      "label": "BUY",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "clear",
+      "company": "NOVA (clear buy)",
+      "label": "BUY",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "clear",
+      "company": "ORBIT (clear buy)",
+      "label": "BUY",
+      "provider": "Parasail"
+    },
+    {
+      "prompt": "clear",
+      "company": "ORBIT (clear buy)",
+      "label": "BUY",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "clear",
+      "company": "ORBIT (clear buy)",
+      "label": "BUY",
+      "provider": "Alibaba"
+    },
+    {
+      "prompt": "clear",
+      "company": "ORBIT (clear buy)",
+      "label": "BUY",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "clear",
+      "company": "ORBIT (clear buy)",
+      "label": "BUY",
+      "provider": "Alibaba"
+    },
+    {
+      "prompt": "clear",
+      "company": "ORBIT (clear buy)",
+      "label": "BUY",
+      "provider": "StreamLake"
+    },
+    {
+      "prompt": "clear",
+      "company": "ORBIT (clear buy)",
+      "label": "BUY",
+      "provider": "Alibaba"
+    },
+    {
+      "prompt": "clear",
+      "company": "ORBIT (clear buy)",
+      "label": "BUY",
+      "provider": "Alibaba"
+    },
+    {
+      "prompt": "clear",
+      "company": "ORBIT (clear buy)",
+      "label": "BUY",
+      "provider": "StreamLake"
+    },
+    {
+      "prompt": "clear",
+      "company": "ORBIT (clear buy)",
+      "label": "BUY",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "clear",
+      "company": "ORBIT (clear buy)",
+      "label": "BUY",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "clear",
+      "company": "ORBIT (clear buy)",
+      "label": "BUY",
+      "provider": "StreamLake"
+    },
+    {
+      "prompt": "clear",
+      "company": "ORBIT (clear buy)",
+      "label": "BUY",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "clear",
+      "company": "ORBIT (clear buy)",
+      "label": "BUY",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "clear",
+      "company": "ORBIT (clear buy)",
+      "label": "BUY",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "clear",
+      "company": "ORBIT (clear buy)",
+      "label": "BUY",
+      "provider": "Google"
+    },
+    {
+      "prompt": "clear",
+      "company": "ORBIT (clear buy)",
+      "label": "BUY",
+      "provider": "StreamLake"
+    },
+    {
+      "prompt": "clear",
+      "company": "ORBIT (clear buy)",
+      "label": "BUY",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "clear",
+      "company": "ORBIT (clear buy)",
+      "label": "BUY",
+      "provider": "StreamLake"
+    },
+    {
+      "prompt": "clear",
+      "company": "ORBIT (clear buy)",
+      "label": "BUY",
+      "provider": "Parasail"
+    },
+    {
+      "prompt": "clear",
+      "company": "ORBIT (clear buy)",
+      "label": "BUY",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "clear",
+      "company": "ORBIT (clear buy)",
+      "label": "BUY",
+      "provider": "Google"
+    },
+    {
+      "prompt": "clear",
+      "company": "ORBIT (clear buy)",
+      "label": "BUY",
+      "provider": "StreamLake"
+    },
+    {
+      "prompt": "clear",
+      "company": "ORBIT (clear buy)",
+      "label": "BUY",
+      "provider": "StreamLake"
+    },
+    {
+      "prompt": "clear",
+      "company": "ORBIT (clear buy)",
+      "label": "BUY",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "clear",
+      "company": "ORBIT (clear buy)",
+      "label": "BUY",
+      "provider": "Parasail"
+    },
+    {
+      "prompt": "clear",
+      "company": "ORBIT (clear buy)",
+      "label": "BUY",
+      "provider": "Parasail"
+    },
+    {
+      "prompt": "clear",
+      "company": "ORBIT (clear buy)",
+      "label": "BUY",
+      "provider": "Parasail"
+    },
+    {
+      "prompt": "clear",
+      "company": "ORBIT (clear buy)",
+      "label": "BUY",
+      "provider": "Alibaba"
+    },
+    {
+      "prompt": "clear",
+      "company": "ORBIT (clear buy)",
+      "label": "BUY",
+      "provider": "Parasail"
+    },
+    {
+      "prompt": "clear",
+      "company": "DUSKWARE (clear sell)",
+      "label": "SELL",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "clear",
+      "company": "DUSKWARE (clear sell)",
+      "label": "SELL",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "clear",
+      "company": "DUSKWARE (clear sell)",
+      "label": "SELL",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "clear",
+      "company": "DUSKWARE (clear sell)",
+      "label": "SELL",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "clear",
+      "company": "DUSKWARE (clear sell)",
+      "label": "SELL",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "clear",
+      "company": "DUSKWARE (clear sell)",
+      "label": "SELL",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "clear",
+      "company": "DUSKWARE (clear sell)",
+      "label": "SELL",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "clear",
+      "company": "DUSKWARE (clear sell)",
+      "label": "SELL",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "clear",
+      "company": "DUSKWARE (clear sell)",
+      "label": "SELL",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "clear",
+      "company": "DUSKWARE (clear sell)",
+      "label": "SELL",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "clear",
+      "company": "DUSKWARE (clear sell)",
+      "label": "SELL",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "clear",
+      "company": "DUSKWARE (clear sell)",
+      "label": "SELL",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "clear",
+      "company": "DUSKWARE (clear sell)",
+      "label": "SELL",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "clear",
+      "company": "DUSKWARE (clear sell)",
+      "label": "SELL",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "clear",
+      "company": "DUSKWARE (clear sell)",
+      "label": "SELL",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "clear",
+      "company": "DUSKWARE (clear sell)",
+      "label": "SELL",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "clear",
+      "company": "DUSKWARE (clear sell)",
+      "label": "SELL",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "clear",
+      "company": "DUSKWARE (clear sell)",
+      "label": "SELL",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "clear",
+      "company": "DUSKWARE (clear sell)",
+      "label": "SELL",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "clear",
+      "company": "DUSKWARE (clear sell)",
+      "label": "SELL",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "clear",
+      "company": "DUSKWARE (clear sell)",
+      "label": "SELL",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "clear",
+      "company": "DUSKWARE (clear sell)",
+      "label": "SELL",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "clear",
+      "company": "DUSKWARE (clear sell)",
+      "label": "SELL",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "clear",
+      "company": "DUSKWARE (clear sell)",
+      "label": "SELL",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "clear",
+      "company": "DUSKWARE (clear sell)",
+      "label": "SELL",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "clear",
+      "company": "DUSKWARE (clear sell)",
+      "label": "SELL",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "clear",
+      "company": "DUSKWARE (clear sell)",
+      "label": "SELL",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "clear",
+      "company": "DUSKWARE (clear sell)",
+      "label": "SELL",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "clear",
+      "company": "DUSKWARE (clear sell)",
+      "label": "SELL",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "clear",
+      "company": "DUSKWARE (clear sell)",
+      "label": "SELL",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "clear",
+      "company": "RUSTLINE (clear sell)",
+      "label": "SELL",
+      "provider": "Parasail"
+    },
+    {
+      "prompt": "clear",
+      "company": "RUSTLINE (clear sell)",
+      "label": "SELL",
+      "provider": "Novita"
+    },
+    {
+      "prompt": "clear",
+      "company": "RUSTLINE (clear sell)",
+      "label": "SELL",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "clear",
+      "company": "RUSTLINE (clear sell)",
+      "label": "SELL",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "clear",
+      "company": "RUSTLINE (clear sell)",
+      "label": "SELL",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "clear",
+      "company": "RUSTLINE (clear sell)",
+      "label": "SELL",
+      "provider": "Novita"
+    },
+    {
+      "prompt": "clear",
+      "company": "RUSTLINE (clear sell)",
+      "label": "SELL",
+      "provider": "Alibaba"
+    },
+    {
+      "prompt": "clear",
+      "company": "RUSTLINE (clear sell)",
+      "label": "SELL",
+      "provider": "Alibaba"
+    },
+    {
+      "prompt": "clear",
+      "company": "RUSTLINE (clear sell)",
+      "label": "SELL",
+      "provider": "Novita"
+    },
+    {
+      "prompt": "clear",
+      "company": "RUSTLINE (clear sell)",
+      "label": "SELL",
+      "provider": "Google"
+    },
+    {
+      "prompt": "clear",
+      "company": "RUSTLINE (clear sell)",
+      "label": "SELL",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "clear",
+      "company": "RUSTLINE (clear sell)",
+      "label": "SELL",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "clear",
+      "company": "RUSTLINE (clear sell)",
+      "label": "SELL",
+      "provider": "Alibaba"
+    },
+    {
+      "prompt": "clear",
+      "company": "RUSTLINE (clear sell)",
+      "label": "SELL",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "clear",
+      "company": "RUSTLINE (clear sell)",
+      "label": "SELL",
+      "provider": "Alibaba"
+    },
+    {
+      "prompt": "clear",
+      "company": "RUSTLINE (clear sell)",
+      "label": "SELL",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "clear",
+      "company": "RUSTLINE (clear sell)",
+      "label": "SELL",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "clear",
+      "company": "RUSTLINE (clear sell)",
+      "label": "SELL",
+      "provider": "Parasail"
+    },
+    {
+      "prompt": "clear",
+      "company": "RUSTLINE (clear sell)",
+      "label": "SELL",
+      "provider": "Alibaba"
+    },
+    {
+      "prompt": "clear",
+      "company": "RUSTLINE (clear sell)",
+      "label": "SELL",
+      "provider": "Parasail"
+    },
+    {
+      "prompt": "clear",
+      "company": "RUSTLINE (clear sell)",
+      "label": "SELL",
+      "provider": "Parasail"
+    },
+    {
+      "prompt": "clear",
+      "company": "RUSTLINE (clear sell)",
+      "label": "SELL",
+      "provider": "Alibaba"
+    },
+    {
+      "prompt": "clear",
+      "company": "RUSTLINE (clear sell)",
+      "label": "SELL",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "clear",
+      "company": "RUSTLINE (clear sell)",
+      "label": "SELL",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "clear",
+      "company": "RUSTLINE (clear sell)",
+      "label": "SELL",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "clear",
+      "company": "RUSTLINE (clear sell)",
+      "label": "SELL",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "clear",
+      "company": "RUSTLINE (clear sell)",
+      "label": "SELL",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "clear",
+      "company": "RUSTLINE (clear sell)",
+      "label": "SELL",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "clear",
+      "company": "RUSTLINE (clear sell)",
+      "label": "SELL",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "clear",
+      "company": "RUSTLINE (clear sell)",
+      "label": "SELL",
+      "provider": "Alibaba"
+    },
+    {
+      "prompt": "clear",
+      "company": "HALCYON (knife-edge)",
+      "label": "SELL",
+      "provider": "Parasail"
+    },
+    {
+      "prompt": "clear",
+      "company": "HALCYON (knife-edge)",
+      "label": "SELL",
+      "provider": "Novita"
+    },
+    {
+      "prompt": "clear",
+      "company": "HALCYON (knife-edge)",
+      "label": "SELL",
+      "provider": "Parasail"
+    },
+    {
+      "prompt": "clear",
+      "company": "HALCYON (knife-edge)",
+      "label": "?1. REVENUE",
+      "provider": "Google"
+    },
+    {
+      "prompt": "clear",
+      "company": "HALCYON (knife-edge)",
+      "label": "SELL",
+      "provider": "Alibaba"
+    },
+    {
+      "prompt": "clear",
+      "company": "HALCYON (knife-edge)",
+      "label": "SELL",
+      "provider": "Novita"
+    },
+    {
+      "prompt": "clear",
+      "company": "HALCYON (knife-edge)",
+      "label": "SELL",
+      "provider": "StreamLake"
+    },
+    {
+      "prompt": "clear",
+      "company": "HALCYON (knife-edge)",
+      "label": "SELL",
+      "provider": "Alibaba"
+    },
+    {
+      "prompt": "clear",
+      "company": "HALCYON (knife-edge)",
+      "label": "SELL",
+      "provider": "Parasail"
+    },
+    {
+      "prompt": "clear",
+      "company": "HALCYON (knife-edge)",
+      "label": "SELL",
+      "provider": "StreamLake"
+    },
+    {
+      "prompt": "clear",
+      "company": "HALCYON (knife-edge)",
+      "label": "SELL",
+      "provider": "Novita"
+    },
+    {
+      "prompt": "clear",
+      "company": "HALCYON (knife-edge)",
+      "label": "SELL",
+      "provider": "Novita"
+    },
+    {
+      "prompt": "clear",
+      "company": "HALCYON (knife-edge)",
+      "label": "SELL",
+      "provider": "Alibaba"
+    },
+    {
+      "prompt": "clear",
+      "company": "HALCYON (knife-edge)",
+      "label": "SELL",
+      "provider": "Novita"
+    },
+    {
+      "prompt": "clear",
+      "company": "HALCYON (knife-edge)",
+      "label": "SELL",
+      "provider": "Google"
+    },
+    {
+      "prompt": "clear",
+      "company": "HALCYON (knife-edge)",
+      "label": "SELL",
+      "provider": "Novita"
+    },
+    {
+      "prompt": "clear",
+      "company": "HALCYON (knife-edge)",
+      "label": "SELL",
+      "provider": "StreamLake"
+    },
+    {
+      "prompt": "clear",
+      "company": "HALCYON (knife-edge)",
+      "label": "SELL",
+      "provider": "Alibaba"
+    },
+    {
+      "prompt": "clear",
+      "company": "HALCYON (knife-edge)",
+      "label": "SELL",
+      "provider": "Alibaba"
+    },
+    {
+      "prompt": "clear",
+      "company": "HALCYON (knife-edge)",
+      "label": "SELL",
+      "provider": "StreamLake"
+    },
+    {
+      "prompt": "clear",
+      "company": "HALCYON (knife-edge)",
+      "label": "SELL",
+      "provider": "Alibaba"
+    },
+    {
+      "prompt": "clear",
+      "company": "HALCYON (knife-edge)",
+      "label": "SELL",
+      "provider": "StreamLake"
+    },
+    {
+      "prompt": "clear",
+      "company": "HALCYON (knife-edge)",
+      "label": "SELL",
+      "provider": "Parasail"
+    },
+    {
+      "prompt": "clear",
+      "company": "HALCYON (knife-edge)",
+      "label": "SELL",
+      "provider": "Novita"
+    },
+    {
+      "prompt": "clear",
+      "company": "HALCYON (knife-edge)",
+      "label": "SELL",
+      "provider": "Alibaba"
+    },
+    {
+      "prompt": "clear",
+      "company": "HALCYON (knife-edge)",
+      "label": "SELL",
+      "provider": "Parasail"
+    },
+    {
+      "prompt": "clear",
+      "company": "HALCYON (knife-edge)",
+      "label": "SELL",
+      "provider": "Parasail"
+    },
+    {
+      "prompt": "clear",
+      "company": "HALCYON (knife-edge)",
+      "label": "SELL",
+      "provider": "Novita"
+    },
+    {
+      "prompt": "clear",
+      "company": "HALCYON (knife-edge)",
+      "label": "SELL",
+      "provider": "StreamLake"
+    },
+    {
+      "prompt": "clear",
+      "company": "HALCYON (knife-edge)",
+      "label": "SELL",
+      "provider": "Novita"
+    },
+    {
+      "prompt": "clear",
+      "company": "MERIDIAN (knife-edge)",
+      "label": "HOLD",
+      "provider": "Parasail"
+    },
+    {
+      "prompt": "clear",
+      "company": "MERIDIAN (knife-edge)",
+      "label": "HOLD",
+      "provider": "Parasail"
+    },
+    {
+      "prompt": "clear",
+      "company": "MERIDIAN (knife-edge)",
+      "label": "HOLD",
+      "provider": "Alibaba"
+    },
+    {
+      "prompt": "clear",
+      "company": "MERIDIAN (knife-edge)",
+      "label": "HOLD",
+      "provider": "Novita"
+    },
+    {
+      "prompt": "clear",
+      "company": "MERIDIAN (knife-edge)",
+      "label": "HOLD",
+      "provider": "Alibaba"
+    },
+    {
+      "prompt": "clear",
+      "company": "MERIDIAN (knife-edge)",
+      "label": "HOLD",
+      "provider": "Parasail"
+    },
+    {
+      "prompt": "clear",
+      "company": "MERIDIAN (knife-edge)",
+      "label": "HOLD",
+      "provider": "Novita"
+    },
+    {
+      "prompt": "clear",
+      "company": "MERIDIAN (knife-edge)",
+      "label": "HOLD",
+      "provider": "Novita"
+    },
+    {
+      "prompt": "clear",
+      "company": "MERIDIAN (knife-edge)",
+      "label": "HOLD",
+      "provider": "Alibaba"
+    },
+    {
+      "prompt": "clear",
+      "company": "MERIDIAN (knife-edge)",
+      "label": "HOLD",
+      "provider": "Novita"
+    },
+    {
+      "prompt": "clear",
+      "company": "MERIDIAN (knife-edge)",
+      "label": "HOLD",
+      "provider": "Novita"
+    },
+    {
+      "prompt": "clear",
+      "company": "MERIDIAN (knife-edge)",
+      "label": "HOLD",
+      "provider": "Parasail"
+    },
+    {
+      "prompt": "clear",
+      "company": "MERIDIAN (knife-edge)",
+      "label": "HOLD",
+      "provider": "Google"
+    },
+    {
+      "prompt": "clear",
+      "company": "MERIDIAN (knife-edge)",
+      "label": "HOLD",
+      "provider": "Alibaba"
+    },
+    {
+      "prompt": "clear",
+      "company": "MERIDIAN (knife-edge)",
+      "label": "HOLD",
+      "provider": "Google"
+    },
+    {
+      "prompt": "clear",
+      "company": "MERIDIAN (knife-edge)",
+      "label": "HOLD",
+      "provider": "Novita"
+    },
+    {
+      "prompt": "clear",
+      "company": "MERIDIAN (knife-edge)",
+      "label": "HOLD",
+      "provider": "Google"
+    },
+    {
+      "prompt": "clear",
+      "company": "MERIDIAN (knife-edge)",
+      "label": "HOLD",
+      "provider": "Alibaba"
+    },
+    {
+      "prompt": "clear",
+      "company": "MERIDIAN (knife-edge)",
+      "label": "HOLD",
+      "provider": "Alibaba"
+    },
+    {
+      "prompt": "clear",
+      "company": "MERIDIAN (knife-edge)",
+      "label": "HOLD",
+      "provider": "Alibaba"
+    },
+    {
+      "prompt": "clear",
+      "company": "MERIDIAN (knife-edge)",
+      "label": "HOLD",
+      "provider": "Alibaba"
+    },
+    {
+      "prompt": "clear",
+      "company": "MERIDIAN (knife-edge)",
+      "label": "HOLD",
+      "provider": "Novita"
+    },
+    {
+      "prompt": "clear",
+      "company": "MERIDIAN (knife-edge)",
+      "label": "HOLD",
+      "provider": "Novita"
+    },
+    {
+      "prompt": "clear",
+      "company": "MERIDIAN (knife-edge)",
+      "label": "HOLD",
+      "provider": "Alibaba"
+    },
+    {
+      "prompt": "clear",
+      "company": "MERIDIAN (knife-edge)",
+      "label": "HOLD",
+      "provider": "Alibaba"
+    },
+    {
+      "prompt": "clear",
+      "company": "MERIDIAN (knife-edge)",
+      "label": "HOLD",
+      "provider": "Novita"
+    },
+    {
+      "prompt": "clear",
+      "company": "MERIDIAN (knife-edge)",
+      "label": "HOLD",
+      "provider": "Novita"
+    },
+    {
+      "prompt": "clear",
+      "company": "MERIDIAN (knife-edge)",
+      "label": "HOLD",
+      "provider": "Novita"
+    },
+    {
+      "prompt": "clear",
+      "company": "MERIDIAN (knife-edge)",
+      "label": "HOLD",
+      "provider": "Alibaba"
+    },
+    {
+      "prompt": "clear",
+      "company": "MERIDIAN (knife-edge)",
+      "label": "HOLD",
+      "provider": "Novita"
+    },
+    {
+      "prompt": "clear",
+      "company": "TESSERA (knife-edge)",
+      "label": "HOLD",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "clear",
+      "company": "TESSERA (knife-edge)",
+      "label": "HOLD",
+      "provider": "Novita"
+    },
+    {
+      "prompt": "clear",
+      "company": "TESSERA (knife-edge)",
+      "label": "HOLD",
+      "provider": "Alibaba"
+    },
+    {
+      "prompt": "clear",
+      "company": "TESSERA (knife-edge)",
+      "label": "HOLD",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "clear",
+      "company": "TESSERA (knife-edge)",
+      "label": "HOLD",
+      "provider": "Novita"
+    },
+    {
+      "prompt": "clear",
+      "company": "TESSERA (knife-edge)",
+      "label": "HOLD",
+      "provider": "Novita"
+    },
+    {
+      "prompt": "clear",
+      "company": "TESSERA (knife-edge)",
+      "label": "HOLD",
+      "provider": "Alibaba"
+    },
+    {
+      "prompt": "clear",
+      "company": "TESSERA (knife-edge)",
+      "label": "HOLD",
+      "provider": "StreamLake"
+    },
+    {
+      "prompt": "clear",
+      "company": "TESSERA (knife-edge)",
+      "label": "HOLD",
+      "provider": "Alibaba"
+    },
+    {
+      "prompt": "clear",
+      "company": "TESSERA (knife-edge)",
+      "label": "HOLD",
+      "provider": "Novita"
+    },
+    {
+      "prompt": "clear",
+      "company": "TESSERA (knife-edge)",
+      "label": "HOLD",
+      "provider": "Novita"
+    },
+    {
+      "prompt": "clear",
+      "company": "TESSERA (knife-edge)",
+      "label": "HOLD",
+      "provider": "StreamLake"
+    },
+    {
+      "prompt": "clear",
+      "company": "TESSERA (knife-edge)",
+      "label": "HOLD",
+      "provider": "Novita"
+    },
+    {
+      "prompt": "clear",
+      "company": "TESSERA (knife-edge)",
+      "label": "HOLD",
+      "provider": "Novita"
+    },
+    {
+      "prompt": "clear",
+      "company": "TESSERA (knife-edge)",
+      "label": "HOLD",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "clear",
+      "company": "TESSERA (knife-edge)",
+      "label": "HOLD",
+      "provider": "Novita"
+    },
+    {
+      "prompt": "clear",
+      "company": "TESSERA (knife-edge)",
+      "label": "HOLD",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "clear",
+      "company": "TESSERA (knife-edge)",
+      "label": "HOLD",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "clear",
+      "company": "TESSERA (knife-edge)",
+      "label": "HOLD",
+      "provider": "Google"
+    },
+    {
+      "prompt": "clear",
+      "company": "TESSERA (knife-edge)",
+      "label": "HOLD",
+      "provider": "Google"
+    },
+    {
+      "prompt": "clear",
+      "company": "TESSERA (knife-edge)",
+      "label": "HOLD",
+      "provider": "Alibaba"
+    },
+    {
+      "prompt": "clear",
+      "company": "TESSERA (knife-edge)",
+      "label": "HOLD",
+      "provider": "Parasail"
+    },
+    {
+      "prompt": "clear",
+      "company": "TESSERA (knife-edge)",
+      "label": "HOLD",
+      "provider": "Parasail"
+    },
+    {
+      "prompt": "clear",
+      "company": "TESSERA (knife-edge)",
+      "label": "HOLD",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "clear",
+      "company": "TESSERA (knife-edge)",
+      "label": "HOLD",
+      "provider": "Novita"
+    },
+    {
+      "prompt": "clear",
+      "company": "TESSERA (knife-edge)",
+      "label": "HOLD",
+      "provider": "Alibaba"
+    },
+    {
+      "prompt": "clear",
+      "company": "TESSERA (knife-edge)",
+      "label": "HOLD",
+      "provider": "Novita"
+    },
+    {
+      "prompt": "clear",
+      "company": "TESSERA (knife-edge)",
+      "label": "HOLD",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "clear",
+      "company": "TESSERA (knife-edge)",
+      "label": "HOLD",
+      "provider": "Google"
+    },
+    {
+      "prompt": "clear",
+      "company": "TESSERA (knife-edge)",
+      "label": "HOLD",
+      "provider": "Google"
+    },
+    {
+      "prompt": "clear",
+      "company": "QUILL (knife-edge)",
+      "label": "HOLD",
+      "provider": "Alibaba"
+    },
+    {
+      "prompt": "clear",
+      "company": "QUILL (knife-edge)",
+      "label": "HOLD",
+      "provider": "Parasail"
+    },
+    {
+      "prompt": "clear",
+      "company": "QUILL (knife-edge)",
+      "label": "HOLD",
+      "provider": "Alibaba"
+    },
+    {
+      "prompt": "clear",
+      "company": "QUILL (knife-edge)",
+      "label": "HOLD",
+      "provider": "StreamLake"
+    },
+    {
+      "prompt": "clear",
+      "company": "QUILL (knife-edge)",
+      "label": "HOLD",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "clear",
+      "company": "QUILL (knife-edge)",
+      "label": "HOLD",
+      "provider": "Alibaba"
+    },
+    {
+      "prompt": "clear",
+      "company": "QUILL (knife-edge)",
+      "label": "HOLD",
+      "provider": "Google"
+    },
+    {
+      "prompt": "clear",
+      "company": "QUILL (knife-edge)",
+      "label": "HOLD",
+      "provider": "Alibaba"
+    },
+    {
+      "prompt": "clear",
+      "company": "QUILL (knife-edge)",
+      "label": "HOLD",
+      "provider": "Google"
+    },
+    {
+      "prompt": "clear",
+      "company": "QUILL (knife-edge)",
+      "label": "HOLD",
+      "provider": "Alibaba"
+    },
+    {
+      "prompt": "clear",
+      "company": "QUILL (knife-edge)",
+      "label": "HOLD",
+      "provider": "Alibaba"
+    },
+    {
+      "prompt": "clear",
+      "company": "QUILL (knife-edge)",
+      "label": "HOLD",
+      "provider": "Parasail"
+    },
+    {
+      "prompt": "clear",
+      "company": "QUILL (knife-edge)",
+      "label": "HOLD",
+      "provider": "Novita"
+    },
+    {
+      "prompt": "clear",
+      "company": "QUILL (knife-edge)",
+      "label": "HOLD",
+      "provider": "Alibaba"
+    },
+    {
+      "prompt": "clear",
+      "company": "QUILL (knife-edge)",
+      "label": "HOLD",
+      "provider": "Alibaba"
+    },
+    {
+      "prompt": "clear",
+      "company": "QUILL (knife-edge)",
+      "label": "HOLD",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "clear",
+      "company": "QUILL (knife-edge)",
+      "label": "HOLD",
+      "provider": "Alibaba"
+    },
+    {
+      "prompt": "clear",
+      "company": "QUILL (knife-edge)",
+      "label": "HOLD",
+      "provider": "StreamLake"
+    },
+    {
+      "prompt": "clear",
+      "company": "QUILL (knife-edge)",
+      "label": "HOLD",
+      "provider": "Alibaba"
+    },
+    {
+      "prompt": "clear",
+      "company": "QUILL (knife-edge)",
+      "label": "HOLD",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "clear",
+      "company": "QUILL (knife-edge)",
+      "label": "HOLD",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "clear",
+      "company": "QUILL (knife-edge)",
+      "label": "HOLD",
+      "provider": "StreamLake"
+    },
+    {
+      "prompt": "clear",
+      "company": "QUILL (knife-edge)",
+      "label": "HOLD",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "clear",
+      "company": "QUILL (knife-edge)",
+      "label": "HOLD",
+      "provider": "Alibaba"
+    },
+    {
+      "prompt": "clear",
+      "company": "QUILL (knife-edge)",
+      "label": "HOLD",
+      "provider": "Parasail"
+    },
+    {
+      "prompt": "clear",
+      "company": "QUILL (knife-edge)",
+      "label": "HOLD",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "clear",
+      "company": "QUILL (knife-edge)",
+      "label": "HOLD",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "clear",
+      "company": "QUILL (knife-edge)",
+      "label": "HOLD",
+      "provider": "GMICloud"
+    },
+    {
+      "prompt": "clear",
+      "company": "QUILL (knife-edge)",
+      "label": "HOLD",
+      "provider": "Parasail"
+    },
+    {
+      "prompt": "clear",
+      "company": "QUILL (knife-edge)",
+      "label": "HOLD",
+      "provider": "GMICloud"
+    }
+  ]
+}

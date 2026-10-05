@@ -1,0 +1,252 @@
+{
+  "model": "anthropic/claude-haiku-4.5",
+  "n": 30,
+  "pinned": "Amazon Bedrock",
+  "time": "Mon Oct  5 11:02:42 2026",
+  "results": {
+    "ambiguous": [
+      {
+        "text": "Singapore best represents the future with its integration of advanced technology, sustainable urban planning, and smart city infrastructure.",
+        "provider": "Amazon Bedrock"
+      },
+      {
+        "text": "Singapore best represents the future with its integration of advanced technology, sustainable urban planning, and smart city infrastructure.",
+        "provider": "Amazon Bedrock"
+      },
+      {
+        "text": "Singapore best represents the future with its integration of advanced technology, sustainable urban planning, and smart city infrastructure.",
+        "provider": "Amazon Bedrock"
+      },
+      {
+        "text": "Singapore best represents the future with its integration of advanced technology, sustainable urban planning, and smart city infrastructure.",
+        "provider": "Amazon Bedrock"
+      },
+      {
+        "text": "Singapore best represents the future with its integration of advanced technology, sustainable urban planning, and smart city infrastructure.",
+        "provider": "Amazon Bedrock"
+      },
+      {
+        "text": "Singapore best represents the future with its integration of advanced technology, sustainable urban planning, and smart city infrastructure.",
+        "provider": "Amazon Bedrock"
+      },
+      {
+        "text": "Singapore best represents the future with its integration of advanced technology, sustainable urban planning, and smart city infrastructure.",
+        "provider": "Amazon Bedrock"
+      },
+      {
+        "text": "Singapore best represents the future with its integration of advanced technology, sustainable urban planning, and smart city infrastructure.",
+        "provider": "Amazon Bedrock"
+      },
+      {
+        "text": "Singapore best represents the future with its integration of advanced technology, sustainable urban planning, and smart city infrastructure.",
+        "provider": "Amazon Bedrock"
+      },
+      {
+        "text": "Singapore best represents the future with its integration of advanced technology, sustainable urban planning, and smart city infrastructure.",
+        "provider": "Amazon Bedrock"
+      },
+      {
+        "text": "Singapore best represents the future with its integration of advanced technology, sustainable urban planning, and smart city infrastructure.",
+        "provider": "Amazon Bedrock"
+      },
+      {
+        "text": "Singapore best represents the future with its integration of advanced technology, sustainable urban planning, and smart city infrastructure.",
+        "provider": "Amazon Bedrock"
+      },
+      {
+        "text": "Singapore best represents the future with its integration of advanced technology, sustainable urban planning, and smart city infrastructure.",
+        "provider": "Amazon Bedrock"
+      },
+      {
+        "text": "Singapore best represents the future with its integration of advanced technology, sustainable urban planning, and smart city infrastructure.",
+        "provider": "Amazon Bedrock"
+      },
+      {
+        "text": "Singapore best represents the future with its integration of advanced technology, sustainable urban planning, and smart city infrastructure.",
+        "provider": "Amazon Bedrock"
+      },
+      {
+        "text": "Singapore best represents the future with its integration of advanced technology, sustainable urban planning, and smart city infrastructure.",
+        "provider": "Amazon Bedrock"
+      },
+      {
+        "text": "Singapore best represents the future with its integration of advanced technology, sustainable urban planning, and smart city infrastructure.",
+        "provider": "Amazon Bedrock"
+      },
+      {
+        "text": "Singapore best represents the future with its integration of advanced technology, sustainable urban planning, and smart city infrastructure.",
+        "provider": "Amazon Bedrock"
+      },
+      {
+        "text": "Singapore best represents the future with its integration of advanced technology, sustainable urban planning, and smart city infrastructure.",
+        "provider": "Amazon Bedrock"
+      },
+      {
+        "text": "Singapore best represents the future with its integration of advanced technology, sustainable urban planning, and smart city infrastructure.",
+        "provider": "Amazon Bedrock"
+      },
+      {
+        "text": "Singapore best represents the future with its integration of advanced technology, sustainable urban planning, and smart city infrastructure.",
+        "provider": "Amazon Bedrock"
+      },
+      {
+        "text": "Singapore best represents the future with its integration of advanced technology, sustainable urban planning, and smart city infrastructure.",
+        "provider": "Amazon Bedrock"
+      },
+      {
+        "text": "Singapore best represents the future with its integration of advanced technology, sustainable urban planning, and smart city infrastructure.",
+        "provider": "Amazon Bedrock"
+      },
+      {
+        "text": "Singapore best represents the future with its integration of advanced technology, sustainable urban planning, and smart city infrastructure.",
+        "provider": "Amazon Bedrock"
+      },
+      {
+        "text": "Singapore best represents the future with its integration of advanced technology, sustainable urban planning, and smart city infrastructure.",
+        "provider": "Amazon Bedrock"
+      },
+      {
+        "text": "Singapore best represents the future with its integration of advanced technology, sustainable urban planning, and smart city infrastructure.",
+        "provider": "Amazon Bedrock"
+      },
+      {
+        "text": "Singapore best represents the future with its integration of advanced technology, sustainable urban planning, and smart city infrastructure.",
+        "provider": "Amazon Bedrock"
+      },
+      {
+        "text": "Singapore best represents the future with its integration of advanced technology, sustainable urban planning, and smart city infrastructure.",
+        "provider": "Amazon Bedrock"
+      },
+      {
+        "text": "Singapore best represents the future with its integration of advanced technology, sustainable urban planning, and smart city infrastructure.",
+        "provider": "Amazon Bedrock"
+      },
+      {
+        "text": "Singapore best represents the future with its integration of advanced technology, sustainable urban planning, and smart city infrastructure.",
+        "provider": "Amazon Bedrock"
+      }
+    ],
+    "clear": [
+      {
+        "text": "City: San Francisco",
+        "provider": "Amazon Bedrock"
+      },
+      {
+        "text": "City: San Francisco",
+        "provider": "Amazon Bedrock"
+      },
+      {
+        "text": "City: San Francisco",
+        "provider": "Amazon Bedrock"
+      },
+      {
+        "text": "City: San Francisco",
+        "provider": "Amazon Bedrock"
+      },
+      {
+        "text": "City: San Francisco",
+        "provider": "Amazon Bedrock"
+      },
+      {
+        "text": "City: San Francisco",
+        "provider": "Amazon Bedrock"
+      },
+      {
+        "text": "City: San Francisco",
+        "provider": "Amazon Bedrock"
+      },
+      {
+        "text": "City: San Francisco",
+        "provider": "Amazon Bedrock"
+      },
+      {
+        "text": "City: San Francisco",
+        "provider": "Amazon Bedrock"
+      },
+      {
+        "text": "City: San Francisco",
+        "provider": "Amazon Bedrock"
+      },
+      {
+        "text": "City: San Francisco",
+        "provider": "Amazon Bedrock"
+      },
+      {
+        "text": "City: San Francisco",
+        "provider": "Amazon Bedrock"
+      },
+      {
+        "text": "City: San Francisco",
+        "provider": "Amazon Bedrock"
+      },
+      {
+        "text": "City: San Francisco",
+        "provider": "Amazon Bedrock"
+      },
+      {
+        "text": "City: San Francisco",
+        "provider": "Amazon Bedrock"
+      },
+      {
+        "text": "City: San Francisco",
+        "provider": "Amazon Bedrock"
+      },
+      {
+        "text": "City: San Francisco",
+        "provider": "Amazon Bedrock"
+      },
+      {
+        "text": "City: San Francisco",
+        "provider": "Amazon Bedrock"
+      },
+      {
+        "text": "City: San Francisco",
+        "provider": "Amazon Bedrock"
+      },
+      {
+        "text": "City: San Francisco",
+        "provider": "Amazon Bedrock"
+      },
+      {
+        "text": "City: San Francisco",
+        "provider": "Amazon Bedrock"
+      },
+      {
+        "text": "City: San Francisco",
+        "provider": "Amazon Bedrock"
+      },
+      {
+        "text": "City: San Francisco",
+        "provider": "Amazon Bedrock"
+      },
+      {
+        "text": "City: San Francisco",
+        "provider": "Amazon Bedrock"
+      },
+      {
+        "text": "City: San Francisco",
+        "provider": "Amazon Bedrock"
+      },
+      {
+        "text": "City: San Francisco",
+        "provider": "Amazon Bedrock"
+      },
+      {
+        "text": "City: San Francisco",
+        "provider": "Amazon Bedrock"
+      },
+      {
+        "text": "City: San Francisco",
+        "provider": "Amazon Bedrock"
+      },
+      {
+        "text": "City: San Francisco",
+        "provider": "Amazon Bedrock"
+      },
+      {
+        "text": "City: San Francisco",
+        "provider": "Amazon Bedrock"
+      }
+    ]
+  }
+}

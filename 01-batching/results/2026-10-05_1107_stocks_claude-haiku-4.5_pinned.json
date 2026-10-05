@@ -1,0 +1,86 @@
+{
+  "model": "anthropic/claude-haiku-4.5",
+  "n": 20,
+  "pinned": "Amazon Bedrock",
+  "time": "Mon Oct  5 11:07:20 2026",
+  "table": {
+    "vague": {
+      "NOVA (clear buy)": {
+        "BUY": 20
+      },
+      "ORBIT (clear buy)": {
+        "BUY": 20
+      },
+      "DUSKWARE (clear sell)": {
+        "SELL": 20
+      },
+      "RUSTLINE (clear sell)": {
+        "SELL": 20
+      },
+      "HALCYON (knife-edge)": {
+        "HOLD": 20
+      },
+      "MERIDIAN (knife-edge)": {
+        "HOLD": 20
+      },
+      "TESSERA (knife-edge)": {
+        "HOLD": 20
+      },
+      "QUILL (knife-edge)": {
+        "HOLD": 20
+      }
+    },
+    "forced": {
+      "NOVA (clear buy)": {
+        "BUY": 20
+      },
+      "ORBIT (clear buy)": {
+        "BUY": 20
+      },
+      "DUSKWARE (clear sell)": {
+        "SELL": 20
+      },
+      "RUSTLINE (clear sell)": {
+        "SELL": 20
+      },
+      "HALCYON (knife-edge)": {
+        "SELL": 20
+      },
+      "MERIDIAN (knife-edge)": {
+        "BUY": 20
+      },
+      "TESSERA (knife-edge)": {
+        "SELL": 20
+      },
+      "QUILL (knife-edge)": {
+        "SELL": 20
+      }
+    },
+    "clear": {
+      "NOVA (clear buy)": {
+        "BUY": 20
+      },
+      "ORBIT (clear buy)": {
+        "BUY": 20
+      },
+      "DUSKWARE (clear sell)": {
+        "SELL": 20
+      },
+      "RUSTLINE (clear sell)": {
+        "SELL": 20
+      },
+      "HALCYON (knife-edge)": {
+        "SELL": 20
+      },
+      "MERIDIAN (knife-edge)": {
+        "SELL": 20
+      },
+      "TESSERA (knife-edge)": {
+        "HOLD": 20
+      },
+      "QUILL (knife-edge)": {
+        "HOLD": 20
+      }
+    }
+  }
+}
