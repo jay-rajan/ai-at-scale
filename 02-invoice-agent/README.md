@@ -1,0 +1,145 @@
+# 02: Invoice Investigation Agent
+
+An enterprise fintech demo: an LLM agent that **investigates** suspicious invoices instead of following a fixed checklist. It pauses for a human when it can't safely approve, and resumes with their instructions, durably, even days later.
+
+The scenario it's built around is a common payment fraud: an invoice from a real vendor, sent to a **bank account changed three days ago**, by an employee, **without the required second approval**. (Business email compromise cost US businesses $3.05 billion in 2025 according to the [FBI IC3 2025 report](https://www.ic3.gov/AnnualReport/Reports/2025_IC3Report.pdf).)
+
+All companies, people and accounts in `data/` are fictional.
+
+## What's inside
+
+```
+                 ┌───────────────── Temporal workflow (business state) ─────────────────┐
+ invoice ──▶     │ RECEIVED → INVESTIGATING → APPROVED                                  │
+                 │                 │  ▲                                                 │
+                 │                 ▼  │ "investigate further" + instruction             │
+                 │            HUMAN_REVIEW ──▶ APPROVED / REJECTED  (waits indefinitely)│
+                 └──────┬───────────────────────────────────────────────────────────────┘
+                        │ one activity per agent turn
+                        ▼
+          ┌──────── explicit agent loop (agent/loop.py) ────────┐
+          │ observe state → LLM picks a tool → MCP call →        │
+          │ evidence E# → record_findings → … → conclude          │
+          └───────┬───────────────────────────┬──────────────────┘
+                  ▼                           ▼
+        OpenRouter (any model)     enterprise-finance-mcp (stdio)
+                                   invoices · POs · vendors · bank accounts ·
+                                   change history · policies · employees · payments
+```
+
+| Path | What it is |
+|---|---|
+| `enterprise_finance_mcp/server.py` | One MCP server standing in for ERP, procurement, vendor master, HR and payments. 8 read-only tools over `data/enterprise.json`. |
+| `agent/state.py` | Explicit investigation state: facts, evidence, open questions, risk flags, tool history, human messages, status. |
+| `agent/context.py` | What the model sees each turn. `structured` (default): a fresh brief built from state. `full_history`: the whole transcript, for comparison. |
+| `agent/loop.py` | The hand-written loop. One turn = one model call. Guardrail: code, not the model, decides whether an "approve" can stand. |
+| `agent/llm.py` | Small OpenRouter client: tool calling, retries, usage and cost. |
+| `agent/trace.py` | JSON Lines trace: every model call, the exact context sent, tools chosen, results, state before and after, tokens, cost, stop reason. |
+| `workflow/` | Temporal workflow, activities, worker, local dev server, and CLI client commands. |
+| `tests/` | Offline deterministic tests (fake model), and live scenario tests (real model). |
+| `experiments/` | `context_strategy.py`: structured brief vs full history across invoices, models and runs. Results in `experiments/results/`. |
+
+## Setup
+
+From the repo root, follow the [main README](../README.md#setup) for Python and the venv, or do it in this folder:
+
+```bash
+cd 02-invoice-agent
+python3 -m venv .venv && source .venv/bin/activate
+pip install -r requirements.txt
+cp .env.example .env        # add your OpenRouter key
+```
+
+Get a key at [openrouter.ai/keys](https://openrouter.ai/keys). The default model is `google/gemini-3.5-flash`; any OpenRouter model with tool calling works (`AGENT_MODEL` in `.env`).
+
+Optional settings in `.env`:
+
+| Setting | Meaning |
+|---|---|
+| `CONTEXT_STRATEGY` | `structured` (default) or `full_history` |
+| `AGENT_PROVIDER` | pin one OpenRouter provider, no fallbacks (e.g. `Google`). Unpinned, calls can land on different backends |
+| `PROMPT_CACHE=1` | mark a prompt-cache breakpoint on each call. Pays off only when the provider caches prompts this size (see results) |
+| `MAX_TURNS`, `MAX_COST_USD` | the agent's turn and cost budget |
+
+## Run it
+
+**1. Just the agent (no Temporal), the quickest way to see it think:**
+```bash
+python cli.py investigate INV-2026-1042
+python cli.py investigate INV-2026-1042 --instruction "Check whether this vendor has had previous bank-account changes."
+python cli.py trace INV-2026-1042                 # turn-by-turn: tools, results, tokens, state changes
+python cli.py trace INV-2026-1042 --turn 3 --full # the exact context the model saw on turn 3
+```
+
+**2. The durable workflow with a human in the loop** (three terminals):
+```bash
+python -m workflow.dev_server       # local Temporal + UI at http://localhost:8233 (downloaded automatically)
+python -m workflow.worker           # runs workflow code and agent turns
+python cli.py start INV-2026-1042   # then:
+python cli.py status INV-2026-1042  # INVESTIGATING … HUMAN_REVIEW, with findings and evidence
+python cli.py decide INV-2026-1042 investigate "Check whether this vendor has had previous bank-account changes."
+python cli.py decide INV-2026-1042 reject        # or approve
+```
+Prefer the official CLI? `brew install temporal`, then `temporal server start-dev --db-filename temporal-dev.db` instead of `python -m workflow.dev_server`.
+
+While it waits in `HUMAN_REVIEW`, nothing is running: stop the worker, restart your laptop, come back tomorrow, and send the decision. The workflow state lives in Temporal (`temporal-dev.db`).
+
+**3. The context-strategy experiment:**
+```bash
+python -m experiments.context_strategy                       # 3 invoices x 2 strategies x 3 runs (~$1)
+python -m experiments.context_strategy --model google/gemini-3.1-pro-preview --strategies full_history
+python -m experiments.context_strategy --model anthropic/claude-sonnet-5.5 --provider Anthropic \
+       --strategies full_history --invoices INV-2026-1042 --runs 2 --cache
+```
+Each run writes a normal trace to `logs/`, and a summary table to `experiments/results/`.
+
+## Scenarios
+
+| Invoice | Situation | Expected |
+|---|---|---|
+| `INV-2026-1001` Northwind | Everything matches | Agent recommends **approve**, so the workflow auto-approves |
+| `INV-2026-1042` Acme | Bank account changed 3 days ago by email, no second approval (plus a look-alike email domain) | **Human review** |
+| `INV-2026-1077` Globex | Invoice 20.7% over the PO, no amendment | **Human review** |
+
+## Results (October 2026)
+
+**Structured brief vs full history.** Gemini 3.5 Flash, provider pinned, temperature 0, 3 runs per cell, 18 runs, $1.08 ([table](experiments/results/context_strategy-2026-10-09-1620.md)):
+
+| Strategy | Correct outcome | Total cost | Mean turns | Output tokens per run |
+|---|---|---|---|---|
+| structured | **9/9** | $0.81 | 8.1 (6–11) | 7,733 |
+| full_history | 6/9 | **$0.27** | 6.9 | 1,561 |
+
+- Full history was 3x cheaper, and rejected `INV-2026-1042` in 3 of 3 runs instead of sending it to human review. The prompt reserves "reject" for clear cases; suspected fraud should go to a human. (The workflow still routes a reject to a human, so it was safe here.)
+- Structured followed that rule every time, but billed about 4x the output tokens for the same visible output, and varied more in turns.
+- Both strategies caught the look-alike remit email domain in every run.
+
+**A stronger model, full history only.** Gemini 3.1 Pro: 8/9 correct, $0.28 for 9 runs, 4.7 turns. On `INV-2026-1042` it chose human review in 6 of 8 runs and reject in 2, at temperature 0. A smarter model reduces the drift; it doesn't remove it.
+
+**Prompt caching, full history on `INV-2026-1042`.** Gemini cached nothing at these prompt sizes (about 2.5k tokens per call), with or without cache markers. Claude Sonnet 5.5 with `PROMPT_CACHE=1` reused 48–57% of prompt tokens: $0.036–0.041 per run vs $0.055 uncached, human review in 3 of 3 runs.
+
+## Tests
+
+```bash
+pytest                    # offline, deterministic, free (~5 s): MCP server, loop, guardrail,
+                          # workflow pause for 3 simulated days → human instruction → resume → reject
+pytest -m live            # real model on all 3 scenarios (~$0.30). LIVE_RUNS=3 to check consistency
+```
+Live tests assert **outcomes and key evidence**, never the exact sequence of tool calls.
+
+## Design decisions (and their trade-offs)
+
+1. **Hand-written loop, no agent framework.** Every model call, context, tool choice and state change is visible and logged. Cost: you write the loop, retries and stop conditions yourself.
+2. **MCP for tools.** The agent discovers tools at runtime; enterprise systems can change without touching the agent. Cost: a server process and a protocol to learn.
+3. **Explicit state instead of chat history, by default.** Each turn the model gets a compact brief (facts, evidence, open questions, risk flags), not a growing transcript. On resume, the agent answered the reviewer's question from evidence it already had, in one turn. Measured trade-off: structured followed the decision rules every time, while full history cost a third as much but over-rejected. Both are available (`CONTEXT_STRATEGY`) so you can compare on your own cases.
+4. **One Temporal activity per agent turn.** A crash loses at most one turn. The LLM never runs while waiting for a human. Cost: state is serialized between turns.
+5. **The model recommends, code decides.** An "approve" with medium or high risk flags is overridden to human review by a guardrail, and logged.
+6. **Anything but a clean approval goes to a human,** including the agent hitting its turn or cost budget.
+7. **One MCP connection per turn.** The async client must open and close in the same task, and failures stay isolated. Cost: about 0.3 s per turn.
+8. **Tests check outcomes, not paths.** A different but valid investigation still passes.
+
+Observations worth knowing:
+- **The clean invoice can cost the most.** With the structured brief, the agent kept checking policies to be sure (6 to 10 turns). "When is it done?" is a design decision, not a given.
+- **None of the in-turn safety rules fired** in 46 real turns (nudge, call cap, dedupe, conclude-with-data, guardrail). They're insurance, and the offline tests force each one with a fake model.
+- **The guardrail only sees flags the model raised.** "Code decides" is only as strong as the checks code runs itself. Deterministic policy checks are the next step.
+- **Known gaps:** near-duplicate risk flags and open questions (exact-text dedupe), and facts that cite evidence without being checked against it.

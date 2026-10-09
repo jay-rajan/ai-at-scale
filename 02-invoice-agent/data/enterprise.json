@@ -1,0 +1,67 @@
+{
+  "_about": "Mock enterprise data for the Invoice Investigation Agent demo. All companies, people and accounts are fictional. Demo 'today' is 2026-10-07.",
+  "today": "2026-10-07",
+  "invoices": {
+    "INV-2026-1001": {"invoice_id": "INV-2026-1001", "vendor_id": "V-200", "vendor_name": "Northwind Supplies", "po_id": "PO-7710", "amount": 12400.00, "currency": "USD", "invoice_date": "2026-10-01", "received_date": "2026-10-06", "due_date": "2026-10-31", "remit_to": {"bank_name": "First Harbor Bank", "account_last4": "2281", "routing_last4": "0451"}, "line_items": [{"description": "Packaging materials, 400 units", "amount": 12400.00}]},
+    "INV-2026-1042": {"invoice_id": "INV-2026-1042", "vendor_id": "V-100", "vendor_name": "Acme Industrial", "po_id": "PO-8821", "amount": 48250.00, "currency": "USD", "invoice_date": "2026-10-03", "received_date": "2026-10-06", "due_date": "2026-10-20", "remit_to": {"bank_name": "Coastline Credit Union", "account_last4": "9917", "routing_last4": "7730"}, "line_items": [{"description": "Hydraulic press maintenance, Q3", "amount": 48250.00}]},
+    "INV-2026-1077": {"invoice_id": "INV-2026-1077", "vendor_id": "V-300", "vendor_name": "Globex Components", "po_id": "PO-9034", "amount": 86900.00, "currency": "USD", "invoice_date": "2026-10-02", "received_date": "2026-10-05", "due_date": "2026-11-01", "remit_to": {"bank_name": "Meridian National", "account_last4": "6610", "routing_last4": "1188"}, "line_items": [{"description": "Control boards, batch 7", "amount": 72000.00}, {"description": "Expedited shipping and rework", "amount": 14900.00}]}
+  },
+  "purchase_orders": {
+    "PO-7710": {"po_id": "PO-7710", "vendor_id": "V-200", "status": "open", "authorized_amount": 15000.00, "invoiced_to_date": 0.00, "approved_by": "EMP-310", "created": "2026-09-12"},
+    "PO-8821": {"po_id": "PO-8821", "vendor_id": "V-100", "status": "open", "authorized_amount": 60000.00, "invoiced_to_date": 0.00, "approved_by": "EMP-310", "created": "2026-08-30"},
+    "PO-9034": {"po_id": "PO-9034", "vendor_id": "V-300", "status": "open", "authorized_amount": 72000.00, "invoiced_to_date": 0.00, "approved_by": "EMP-310", "created": "2026-09-01", "amendments": []}
+  },
+  "vendors": {
+    "V-100": {"vendor_id": "V-100", "name": "Acme Industrial", "status": "active", "approved": true, "onboarded": "2021-04-12", "category": "equipment maintenance", "risk_tier": "standard"},
+    "V-200": {"vendor_id": "V-200", "name": "Northwind Supplies", "status": "active", "approved": true, "onboarded": "2019-02-03", "category": "packaging", "risk_tier": "low"},
+    "V-300": {"vendor_id": "V-300", "name": "Globex Components", "status": "active", "approved": true, "onboarded": "2022-07-19", "category": "electronics", "risk_tier": "standard"}
+  },
+  "vendor_bank_accounts": {
+    "V-100": [
+      {"account_id": "BA-100-1", "bank_name": "Great Plains Bank", "account_last4": "4402", "routing_last4": "2210", "status": "inactive", "added_on": "2021-04-12", "deactivated_on": "2026-10-04", "verified": true},
+      {"account_id": "BA-100-2", "bank_name": "Coastline Credit Union", "account_last4": "9917", "routing_last4": "7730", "status": "active", "added_on": "2026-10-04", "verified": false}
+    ],
+    "V-200": [
+      {"account_id": "BA-200-1", "bank_name": "First Harbor Bank", "account_last4": "2281", "routing_last4": "0451", "status": "active", "added_on": "2019-02-03", "verified": true}
+    ],
+    "V-300": [
+      {"account_id": "BA-300-1", "bank_name": "Meridian National", "account_last4": "6610", "routing_last4": "1188", "status": "active", "added_on": "2022-07-19", "verified": true}
+    ]
+  },
+  "vendor_change_history": {
+    "V-100": [
+      {"change_id": "CH-5001", "field": "bank_account", "old_value": "Great Plains Bank ...4402", "new_value": "Great Plains Bank ...4402 (routing update)", "changed_by": "EMP-118", "changed_at": "2024-03-18", "requested_via": "vendor portal", "secondary_approval": {"required": true, "approved_by": "EMP-310", "approved_at": "2024-03-19"}},
+      {"change_id": "CH-5114", "field": "remit_email", "old_value": "ar@acme-industrial.example", "new_value": "billing@acme-industria1.example", "changed_by": "EMP-207", "changed_at": "2026-10-04", "requested_via": "email", "secondary_approval": {"required": false}},
+      {"change_id": "CH-5115", "field": "bank_account", "old_value": "Great Plains Bank ...4402", "new_value": "Coastline Credit Union ...9917", "changed_by": "EMP-207", "changed_at": "2026-10-04", "requested_via": "email", "secondary_approval": {"required": true, "approved_by": null, "approved_at": null}}
+    ],
+    "V-200": [],
+    "V-300": [
+      {"change_id": "CH-7001", "field": "address", "old_value": "12 Tech Park Rd", "new_value": "40 Innovation Way", "changed_by": "EMP-118", "changed_at": "2025-11-02", "requested_via": "vendor portal", "secondary_approval": {"required": false}}
+    ]
+  },
+  "approval_policies": {
+    "invoice_auto_approval": {"policy_type": "invoice_auto_approval", "rule": "An invoice may be approved automatically only if: the vendor is active and approved; the invoice references an open PO for the same vendor; invoice amount plus amounts already invoiced is within the PO authorized amount; and the remit-to bank account matches a verified, active vendor bank account that has been in use for at least 30 days.", "otherwise": "Route to human review with findings."},
+    "vendor_bank_change": {"policy_type": "vendor_bank_change", "rule": "Any change to vendor bank details requires secondary approval by a second employee with role 'AP Manager' or 'Controller' before any payment is made to the new account. Changes requested by email must be verified by calling the vendor at the phone number on file (not the number in the email).", "otherwise": "Hold payment and route to human review."},
+    "po_variance": {"policy_type": "po_variance", "rule": "If an invoice exceeds the PO authorized amount by more than 5% or more than $5,000 (whichever is lower), it requires an approved PO amendment before payment.", "otherwise": "Hold payment and route to human review; do not approve without an amendment."},
+    "payment_release": {"policy_type": "payment_release", "rule": "Payments above $25,000 require that all applicable policies above are satisfied; agents may recommend but final release follows these checks.", "otherwise": "Route to human review."}
+  },
+  "employees": {
+    "EMP-118": {"employee_id": "EMP-118", "name": "Priya Nair", "role": "AP Specialist", "department": "Finance", "status": "active"},
+    "EMP-207": {"employee_id": "EMP-207", "name": "Daniel Ortiz", "role": "AP Clerk", "department": "Finance", "status": "active", "hired": "2026-06-01"},
+    "EMP-310": {"employee_id": "EMP-310", "name": "Grace Kim", "role": "AP Manager", "department": "Finance", "status": "active"}
+  },
+  "payment_history": {
+    "V-100": [
+      {"payment_id": "PAY-8812", "date": "2026-07-15", "amount": 46100.00, "to_account_last4": "4402"},
+      {"payment_id": "PAY-8504", "date": "2026-04-14", "amount": 47880.00, "to_account_last4": "4402"},
+      {"payment_id": "PAY-8120", "date": "2026-01-16", "amount": 45950.00, "to_account_last4": "4402"}
+    ],
+    "V-200": [
+      {"payment_id": "PAY-8790", "date": "2026-09-02", "amount": 11800.00, "to_account_last4": "2281"},
+      {"payment_id": "PAY-8433", "date": "2026-06-03", "amount": 12950.00, "to_account_last4": "2281"}
+    ],
+    "V-300": [
+      {"payment_id": "PAY-8702", "date": "2026-08-20", "amount": 64000.00, "to_account_last4": "6610"}
+    ]
+  }
+}

@@ -1,0 +1,3 @@
+# Only needed for 01_why_batch_changes_answers.py (the local simulation).
+# The live experiments use the Python standard library only.
+numpy>=1.26

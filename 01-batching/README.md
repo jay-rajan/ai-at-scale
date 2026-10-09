@@ -42,17 +42,36 @@ Raw data, including every reply: [`results/2026-10-05_1145_stocks_qwen3-235b-a22
 - Small samples (30 per cell, uneven across providers), one task, one day.
 - Companies are fictional and built to be ambiguous. **Nothing here is investment advice.**
 
+## Setup
+
+Requires Python 3.10+. See the [main README](../README.md#setup) for creating the virtual environment. Then:
+
+```bash
+cd 01-batching
+cp .env.example .env        # open .env and paste your OpenRouter key after the =
+```
+
+Get a key at [openrouter.ai/keys](https://openrouter.ai/keys). `.env` is git-ignored, so your key stays local.
+
 ## Run it
 
 ```bash
-python3 01_why_batch_changes_answers.py          # local simulation, needs numpy
-cp .env.example .env                              # add your OpenRouter key
-python3 03_stock_classification.py 30 --model qwen/qwen3-235b-a22b-2507
-python3 03_stock_classification.py 30 --pin --model anthropic/claude-haiku-4.5
-python3 03_stock_classification.py --compare
+python 01_why_batch_changes_answers.py                                  # local simulation, no key needed
+python 03_stock_classification.py 30 --model qwen/qwen3-235b-a22b-2507   # live experiment
+python 03_stock_classification.py 30 --pin --model anthropic/claude-haiku-4.5
+python 03_stock_classification.py --compare                             # compare saved runs
 ```
 
-No other dependencies (standard library only). A 30-run stock experiment costs a few cents.
+Options for `03_stock_classification.py`:
+
+| Option | Meaning |
+|---|---|
+| `30` | runs per company per prompt (default 20) |
+| `--model <id>` | any OpenRouter model ID (default `anthropic/claude-haiku-4.5`) |
+| `--pin` | keep every request on one provider (isolates batching from routing) |
+| `--compare` | summarise all saved runs in `results/` |
+
+A 30-run stock experiment (720 calls) costs a few cents on Qwen. Only the simulation needs numpy; the live experiments use the standard library.
 
 | File | What it does |
 |---|---|
