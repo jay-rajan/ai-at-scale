@@ -6,3 +6,4 @@ paid/
 *.paid.*
 logs/
 temporal-dev.db*
+langgraph.db*

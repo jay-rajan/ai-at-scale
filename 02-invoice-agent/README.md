@@ -32,12 +32,14 @@ All companies, people and accounts in `data/` are fictional.
 | `enterprise_finance_mcp/server.py` | One MCP server standing in for ERP, procurement, vendor master, HR and payments. 8 read-only tools over `data/enterprise.json`. |
 | `agent/state.py` | Explicit investigation state: facts, evidence, open questions, risk flags, tool history, human messages, status. |
 | `agent/context.py` | What the model sees each turn. `structured` (default): a fresh brief built from state. `full_history`: the whole transcript, for comparison. |
-| `agent/loop.py` | The hand-written loop. One turn = one model call. Guardrail: code, not the model, decides whether an "approve" can stand. |
+| `agent/loop.py` | The loop and the rules of each phase (think, record, gather, decide). One turn = one model call. Guardrail: code, not the model, decides whether an "approve" can stand. |
+| `agent/turn_graph.py` | One turn as a LangGraph graph: `think → record → [gather] → decide`. The single definition of a turn's flow; `agent_step` runs it (`engine="fixed"` keeps the original hand-written order for comparison). |
+| `langgraph_agent/` | The whole investigation as a local LangGraph graph: the turn, the loop, and human review with `interrupt()`, checkpointed to SQLite (`langgraph.db`). No hosted services. |
 | `agent/llm.py` | Small OpenRouter client: tool calling, retries, usage and cost. |
 | `agent/trace.py` | JSON Lines trace: every model call, the exact context sent, tools chosen, results, state before and after, tokens, cost, stop reason. |
 | `workflow/` | Temporal workflow, activities, worker, local dev server, and CLI client commands. |
 | `tests/` | Offline deterministic tests (fake model), and live scenario tests (real model). |
-| `experiments/` | `context_strategy.py`: structured brief vs full history across invoices, models and runs. Results in `experiments/results/`. |
+| `experiments/` | `context_strategy.py`: structured brief vs full history across invoices, models and runs. `turn_engine.py`: the old fixed turn vs the turn graph. Results in `experiments/results/`. |
 
 ## Setup
 
@@ -93,6 +95,22 @@ python -m experiments.context_strategy --model anthropic/claude-sonnet-5.5 --pro
 ```
 Each run writes a normal trace to `logs/`, and a summary table to `experiments/results/`.
 
+**4. The turn-engine experiment (old fixed turn vs turn graph):**
+```bash
+python -m experiments.turn_engine --offline --runs 10        # fake model: free, exact engine overhead
+python -m experiments.turn_engine                            # live: 3 invoices x 2 engines x 3 runs (~$1.5)
+```
+
+**5. The LangGraph build (local, no Temporal):**
+```bash
+python -m langgraph_agent start INV-2026-1042                # runs until done or human review
+python -m langgraph_agent status INV-2026-1042
+python -m langgraph_agent decide INV-2026-1042 investigate "Call the vendor on the number in the vendor master"
+python -m langgraph_agent resume INV-2026-1042               # after a crash: continue from the last checkpoint
+python -m langgraph_agent history INV-2026-1042              # every checkpoint
+python -m langgraph_agent graph                              # write the graph as Mermaid (langgraph_agent/graph.mmd)
+```
+
 ## Scenarios
 
 | Invoice | Situation | Expected |
@@ -117,6 +135,16 @@ Each run writes a normal trace to `logs/`, and a summary table to `experiments/r
 **A stronger model, full history only.** Gemini 3.1 Pro: 8/9 correct, $0.28 for 9 runs, 4.7 turns. On `INV-2026-1042` it chose human review in 6 of 8 runs and reject in 2, at temperature 0. A smarter model reduces the drift; it doesn't remove it.
 
 **Prompt caching, full history on `INV-2026-1042`.** Gemini cached nothing at these prompt sizes (about 2.5k tokens per call), with or without cache markers. Claude Sonnet 5.5 with `PROMPT_CACHE=1` reused 48–57% of prompt tokens: $0.036–0.041 per run vs $0.055 uncached, human review in 3 of 3 runs.
+
+**Old fixed turn vs turn graph.** Same prompts, same model, structured brief. Offline with the fake model, both engines produced the identical investigation (same evidence, flags and recommendation) on all 3 invoices, 10 runs each; the graph adds about 1.6 ms per turn ([table](experiments/results/turn_engine-2026-10-10-1039-offline.md)). Live, Gemini 3.5 Flash, 18 runs, $1.71 ([table](experiments/results/turn_engine-2026-10-10-1040-gemini-3.5-flash.md)):
+
+| Engine | Correct outcome | Mean turns | Time outside the LLM, per turn | Share of wall time waiting for the LLM | Total cost |
+|---|---|---|---|---|---|
+| fixed | 8/9 | 8.2 | 7.6 ms | 99.9% | $0.85 |
+| graph | 9/9 | 8.7 | 14.2 ms | 99.7% | $0.87 |
+
+- The engine doesn't change what the model sees, so it can't change what the model decides. The one miss (fixed rejected `INV-2026-1042` once) is the same model drift seen above, not the engine.
+- The graph costs a few milliseconds per turn against 4–6 seconds of LLM time. What it buys: the flow is defined once, the path follows the model's choice (no tool phase when no data was asked for), and each node can be checkpointed, retried or run as its own activity.
 
 ## Tests
 

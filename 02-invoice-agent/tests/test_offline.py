@@ -92,3 +92,15 @@ async def test_clean_invoice_is_auto_approved_by_workflow(monkeypatch):
             result = await env.client.execute_workflow(InvoiceInvestigationWorkflow.run, InvestigationRequest(invoice_id="INV-2026-1001"),
                                                        id=f"wf-{uuid.uuid4().hex[:6]}", task_queue=tq)
     assert result["business_status"] == "APPROVED" and result["decisions"] == []
+
+
+@pytest.mark.parametrize("invoice_id", ["INV-2026-1001", "INV-2026-1042", "INV-2026-1077"])
+async def test_fixed_and_graph_engines_agree(invoice_id):
+    """The old hand-written turn and the turn graph must produce the same investigation."""
+    out = {}
+    for engine in ("fixed", "graph"):
+        async with MCPToolbox() as tb:
+            s = await run_investigation(InvestigationState(invoice_id=invoice_id), tb, FakeModel(), None, engine=engine)
+        d = s.to_dict()
+        out[engine] = {k: d[k] for k in ("turn", "status", "evidence", "facts", "risk_flags", "recommendation", "tool_history")}
+    assert out["fixed"] == out["graph"]

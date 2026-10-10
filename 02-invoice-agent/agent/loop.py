@@ -14,6 +14,7 @@ from .state import RECOMMENDATIONS, InvestigationState
 from .trace import Trace
 
 MAX_ENTERPRISE_CALLS_PER_TURN = 2
+CONTROL_TOOLS = ("record_findings", "conclude")      # the agent's own tools; everything else is enterprise data
 
 
 class ChatModel(Protocol):
@@ -29,14 +30,44 @@ def _snapshot(s: InvestigationState) -> dict[str, Any]:
     return d
 
 
+ENGINES = ("graph", "fixed")
+
+
 async def agent_step(s: InvestigationState, toolbox: Any, llm: ChatModel, trace: Trace | None,
-                     max_turns: int = 12, max_cost_usd: float = 0.50, strategy: str = "structured") -> InvestigationState:
+                     max_turns: int = 12, max_cost_usd: float = 0.50, strategy: str = "structured",
+                     engine: str = "graph") -> InvestigationState:
+    """One turn: think -> record -> [gather] -> decide. The phase functions below hold the rules.
+
+    engine="graph" (default): the flow is defined once, as a graph, in agent/turn_graph.py, and the
+        model's choice picks the path (gather runs only if it asked for enterprise data).
+    engine="fixed": the original hand-written order, every phase every turn. Kept for the
+        old-vs-new comparison in experiments/turn_engine.py."""
     if s.status != "investigating":
         return s
     before = _snapshot(s)
-    messages = build_messages(s, max_turns, strategy)
-    tools = toolbox.as_openai_tools() + control_tools()
+    if engine == "fixed":
+        resp = await think(s, toolbox.as_openai_tools() + control_tools(), llm, max_turns, strategy)
+        apply_findings(s, resp["tool_calls"], strategy)
+        resp["tool_results"] = await gather_evidence(s, resp["tool_calls"], toolbox, strategy)
+        resp["guardrail"] = decide(s, resp["tool_calls"], max_turns, max_cost_usd, strategy)
+    else:
+        from .turn_graph import TURN, TurnContext      # deferred: turn_graph imports the phases from this module
+        out = await TURN.ainvoke({"inv": s.to_dict(), "resp": None, "turn_budget": max_turns,
+                                  "cost_budget": max_cost_usd, "strategy": strategy},
+                                 context=TurnContext(llm=llm, toolbox=toolbox))
+        s = InvestigationState.from_dict(out["inv"])
+        resp = out["resp"]
+    if trace:
+        tools = toolbox.as_openai_tools() + control_tools()
+        trace_turn(trace, s, resp, tools, resp["tool_results"], resp["guardrail"], before, llm.model, strategy)
+    return s
 
+
+async def think(s: InvestigationState, tools: list[dict[str, Any]], llm: ChatModel,
+                max_turns: int, strategy: str) -> dict[str, Any]:
+    """Phase 1, the only LLM call: build the context, ask the model, nudge once if it answers in prose.
+    Returns a plain dict so it can be stored between steps (LangGraph state, Temporal history)."""
+    messages = build_messages(s, max_turns, strategy)
     resp = await llm.chat(messages, tools)
     _add_usage(s, resp.usage)
     nudged = False
@@ -51,14 +82,14 @@ async def agent_step(s: InvestigationState, toolbox: Any, llm: ChatModel, trace:
                              "tool_calls": [{"id": c["id"], "type": "function",
                                              "function": {"name": c["name"], "arguments": c["raw_arguments"] if isinstance(c["raw_arguments"], str) else json.dumps(c["arguments"])}}
                                             for c in resp.tool_calls]})
+    return {"content": resp.content, "tool_calls": resp.tool_calls, "finish_reason": resp.finish_reason,
+            "provider": resp.provider, "latency_ms": resp.latency_ms, "usage": resp.usage,
+            "nudged": nudged, "messages": messages}
 
-    tool_results: list[dict[str, Any]] = []
-    calls = resp.tool_calls
-    findings = [c for c in calls if c["name"] == "record_findings"]
-    enterprise = [c for c in calls if c["name"] not in ("record_findings", "conclude")]
-    conclusions = [c for c in calls if c["name"] == "conclude"]
 
-    for c in findings:                                         # 1. update beliefs from what was already seen
+def apply_findings(s: InvestigationState, calls: list[dict[str, Any]], strategy: str) -> None:
+    """Phase 2, pure: update beliefs from what was already seen (record_findings)."""
+    for c in [c for c in calls if c["name"] == "record_findings"]:
         a = c["arguments"]
         for f in a.get("facts") or []:
             if isinstance(f, dict) and f.get("statement"):
@@ -73,7 +104,13 @@ async def agent_step(s: InvestigationState, toolbox: Any, llm: ChatModel, trace:
             s.resolve_question(qid)
         _tool_msg(s, strategy, c, {"ok": True})
 
-    for i, c in enumerate(enterprise):                         # 2. gather new evidence
+
+async def gather_evidence(s: InvestigationState, calls: list[dict[str, Any]], toolbox: Any,
+                          strategy: str) -> list[dict[str, Any]]:
+    """Phase 3, side effects: run up to 2 enterprise tool calls over MCP. Duplicates and unknown tools never run."""
+    tool_results: list[dict[str, Any]] = []
+    enterprise = [c for c in calls if c["name"] not in CONTROL_TOOLS]
+    for i, c in enumerate(enterprise):
         name, args = c["name"], c["arguments"]
         if i >= MAX_ENTERPRISE_CALLS_PER_TURN:
             out = {"skipped": f"max {MAX_ENTERPRISE_CALLS_PER_TURN} enterprise calls per turn"}
@@ -93,10 +130,17 @@ async def agent_step(s: InvestigationState, toolbox: Any, llm: ChatModel, trace:
         s.tool_history.append({"turn": s.turn + 1, "tool": name, "args": args, "evidence_id": eid, "ok": ok})
         tool_results.append({"tool": name, "args": args, "evidence_id": eid, "ok": ok, "latency_ms": ms, "result": result})
         _tool_msg(s, strategy, c, {"evidence_id": eid, "result": result})
+    return tool_results
 
+
+def decide(s: InvestigationState, calls: list[dict[str, Any]], max_turns: int, max_cost_usd: float,
+           strategy: str) -> str | None:
+    """Phase 4, pure: count the turn, apply conclude + guardrail, then the stop checks. Returns the guardrail note."""
+    enterprise = [c for c in calls if c["name"] not in CONTROL_TOOLS]
+    conclusions = [c for c in calls if c["name"] == "conclude"]
     s.turn += 1
     guardrail = None
-    if conclusions and not enterprise:                          # 3. conclude (only if it didn't also ask for more data)
+    if conclusions and not enterprise:                          # conclude only if it didn't also ask for more data
         a = conclusions[-1]["arguments"]
         rec = a.get("recommendation") if a.get("recommendation") in RECOMMENDATIONS else "human_review"
         model_rec = rec
@@ -119,16 +163,19 @@ async def agent_step(s: InvestigationState, toolbox: Any, llm: ChatModel, trace:
         s.status, s.stop_reason = "stopped", "max_turns"
     elif s.usage["cost_usd"] >= max_cost_usd:
         s.status, s.stop_reason = "stopped", "cost_budget"
+    return guardrail
 
-    if trace:
-        trace.write("turn", turn=s.turn, model=llm.model, strategy=strategy, nudged=nudged,
-                    messages_sent=messages, tools_offered=[t["function"]["name"] for t in tools],
-                    response={"content": resp.content, "finish_reason": resp.finish_reason,
-                              "tool_calls": [{"name": c["name"], "arguments": c["arguments"]} for c in calls],
-                              "provider": resp.provider, "latency_ms": resp.latency_ms},
-                    usage=resp.usage, tool_results=tool_results, guardrail=guardrail,
-                    state_before=before, state_after=_snapshot(s), stop_reason=s.stop_reason)
-    return s
+
+def trace_turn(trace: Trace, s: InvestigationState, resp: dict[str, Any], tools: list[dict[str, Any]],
+               tool_results: list[dict[str, Any]], guardrail: str | None, before: dict[str, Any],
+               model: str, strategy: str) -> None:
+    trace.write("turn", turn=s.turn, model=model, strategy=strategy, nudged=resp["nudged"],
+                messages_sent=resp["messages"], tools_offered=[t["function"]["name"] for t in tools],
+                response={"content": resp["content"], "finish_reason": resp["finish_reason"],
+                          "tool_calls": [{"name": c["name"], "arguments": c["arguments"]} for c in resp["tool_calls"]],
+                          "provider": resp["provider"], "latency_ms": resp["latency_ms"]},
+                usage=resp["usage"], tool_results=tool_results, guardrail=guardrail,
+                state_before=before, state_after=_snapshot(s), stop_reason=s.stop_reason)
 
 
 def _add_usage(s: InvestigationState, u: dict[str, Any]) -> None:
@@ -152,11 +199,12 @@ def resume_with_instruction(s: InvestigationState, decision: str, instruction: s
 
 
 async def run_investigation(s: InvestigationState, toolbox: Any, llm: ChatModel, trace: Trace | None,
-                            max_turns: int = 12, max_cost_usd: float = 0.50, strategy: str = "structured") -> InvestigationState:
+                            max_turns: int = 12, max_cost_usd: float = 0.50, strategy: str = "structured",
+                            engine: str = "graph") -> InvestigationState:
     if trace:
-        trace.write("run_start", model=llm.model, strategy=strategy, max_turns=max_turns, state=_snapshot(s))
+        trace.write("run_start", model=llm.model, strategy=strategy, engine=engine, max_turns=max_turns, state=_snapshot(s))
     while s.status == "investigating":
-        s = await agent_step(s, toolbox, llm, trace, max_turns, max_cost_usd, strategy)
+        s = await agent_step(s, toolbox, llm, trace, max_turns, max_cost_usd, strategy, engine)
     if trace:
         trace.write("run_end", stop_reason=s.stop_reason, recommendation=s.recommendation, usage=s.usage,
                     turns=s.turn, final_state=_snapshot(s))
