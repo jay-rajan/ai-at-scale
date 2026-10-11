@@ -1,4 +1,4 @@
 # Type-check against this folder's venv so temporalio, mcp and httpx resolve.
 python-interpreter-path = ".venv/bin/python"
-project-includes = ["agent", "enterprise_finance_mcp", "workflow", "tests", "cli.py"]
+project-includes = ["agent", "enterprise_finance_mcp", "workflow", "langgraph_agent", "graph_in_temporal", "experiments", "tests", "cli.py"]
 project-excludes = [".venv", "logs"]

@@ -119,7 +119,8 @@ def mark_investigating(st: GraphState) -> GraphState:
 
 
 def build_graph() -> Any:
-    g: Any = StateGraph(GraphState, context_schema=TurnContext)   # Any: see agent/turn_graph.py
+    # pyrefly: ignore[bad-specialization]  (false positive, see agent/turn_graph.py)
+    g: Any = StateGraph(GraphState, context_schema=TurnContext)
     g.add_node("start", mark_investigating)
     wire_turn(g)                                   # think -> record -> [gather] -> decide, with node retries
     g.add_node("auto_approve", auto_approve_node)

@@ -7,3 +7,4 @@ paid/
 logs/
 temporal-dev.db*
 langgraph.db*
+langgraph-temporal.db*

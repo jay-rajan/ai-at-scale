@@ -6,6 +6,24 @@ The scenario it's built around is a common payment fraud: an invoice from a real
 
 All companies, people and accounts in `data/` are fictional.
 
+## Follow the article step by step
+
+Companion code for **"Do you even need an Agent?"** on [The AI Switch](https://theaiswitch.substack.com/). Each step of the article maps to code here:
+
+| Step | What it adds | Where | Run it |
+|---|---|---|---|
+| 0. Extraction | Invoice PDF → fields | Not built. `data/enterprise.json` holds invoices as already-extracted fields | |
+| 1. Rules | Fixed checks: approved vendor, PO match, verified bank, second approval | Not built as code. The policies live in `data/enterprise.json` → `approval_policies`, served by `get_approval_policy` | |
+| 2. Fixed pipeline + one LLM call | Code fetches the data, the LLM judges once | Not built yet | |
+| 3. The agent loop | The model picks the next tool (MCP) each turn | `agent/loop.py`, `agent/state.py`, `enterprise_finance_mcp/server.py` | `python cli.py investigate INV-2026-1042` ([Run it §1](#run-it)) |
+| 4. + Temporal | One activity per agent turn; waits days for a human; survives crashes | `workflow/` | [Run it §2](#run-it) |
+| 5. LangGraph | The turn and the loop as a graph, `interrupt()` for human review, SQLite checkpoints | `agent/turn_graph.py`, `langgraph_agent/` | `python -m langgraph_agent start INV-2026-1042` ([Run it §6](#run-it)) |
+| 6a. Temporal + LangGraph | The whole graph inside **one** Temporal activity; Temporal retries it after a crash | `graph_in_temporal/` | [Run it §4](#run-it) |
+| 6b. Temporal's LangGraph plugin | Each node as its own Temporal step | Not built yet | |
+| Test your own setup | Crash, overnight wait, failure and repeat-run checks | `tests/` | `pytest` ([Tests](#tests)) |
+
+The invoice in the article is `INV-2026-1042` (see [Scenarios](#scenarios)).
+
 ## What's inside
 
 ```
@@ -34,6 +52,7 @@ All companies, people and accounts in `data/` are fictional.
 | `agent/context.py` | What the model sees each turn. `structured` (default): a fresh brief built from state. `full_history`: the whole transcript, for comparison. |
 | `agent/loop.py` | The loop and the rules of each phase (think, record, gather, decide). One turn = one model call. Guardrail: code, not the model, decides whether an "approve" can stand. |
 | `agent/turn_graph.py` | One turn as a LangGraph graph: `think → record → [gather] → decide`. The single definition of a turn's flow; `agent_step` runs it (`engine="fixed"` keeps the original hand-written order for comparison). |
+| `graph_in_temporal/` | Build C1: the whole LangGraph investigation inside **one** Temporal activity. LangGraph runs the loop and checkpoints every node (SQLite, `langgraph-temporal.db`); Temporal restarts the activity after a crash and waits for the human. |
 | `langgraph_agent/` | The whole investigation as a local LangGraph graph: the turn, the loop, and human review with `interrupt()`, checkpointed to SQLite (`langgraph.db`). No hosted services. |
 | `agent/llm.py` | Small OpenRouter client: tool calling, retries, usage and cost. |
 | `agent/trace.py` | JSON Lines trace: every model call, the exact context sent, tools chosen, results, state before and after, tokens, cost, stop reason. |
@@ -95,13 +114,23 @@ python -m experiments.context_strategy --model anthropic/claude-sonnet-5.5 --pro
 ```
 Each run writes a normal trace to `logs/`, and a summary table to `experiments/results/`.
 
-**4. The turn-engine experiment (old fixed turn vs turn graph):**
+**4. LangGraph inside Temporal (build C1):**
+```bash
+temporal server start-dev --db-filename temporal-dev.db     # terminal 1
+python -m graph_in_temporal.worker                           # terminal 2
+python -m graph_in_temporal start INV-2026-1042              # terminal 3
+python -m graph_in_temporal history INV-2026-1042            # LangGraph checkpoints, also while it runs
+kill -9 <worker pid>; python -m graph_in_temporal.worker     # crash it mid-run; it continues within ~30 s
+python -m graph_in_temporal decide INV-2026-1042 reject
+```
+
+**5. The turn-engine experiment (old fixed turn vs turn graph):**
 ```bash
 python -m experiments.turn_engine --offline --runs 10        # fake model: free, exact engine overhead
 python -m experiments.turn_engine                            # live: 3 invoices x 2 engines x 3 runs (~$1.5)
 ```
 
-**5. The LangGraph build (local, no Temporal):**
+**6. The LangGraph build (local, no Temporal):**
 ```bash
 python -m langgraph_agent start INV-2026-1042                # runs until done or human review
 python -m langgraph_agent status INV-2026-1042
@@ -145,6 +174,8 @@ python -m langgraph_agent graph                              # write the graph a
 
 - The engine doesn't change what the model sees, so it can't change what the model decides. The one miss (fixed rejected `INV-2026-1042` once) is the same model drift seen above, not the engine.
 - The graph costs a few milliseconds per turn against 4–6 seconds of LLM time. What it buys: the flow is defined once, the path follows the model's choice (no tool phase when no data was asked for), and each node can be checkpointed, retried or run as its own activity.
+
+**LangGraph inside one Temporal activity, real crash.** `INV-2026-1042`, Gemini 3.5 Flash. The worker was killed with `kill -9` after 3 turns (13 checkpoints), while turn 4 was waiting on the LLM. A new worker started 6 s later. Temporal noticed the missing heartbeat and retried the activity 22 s after the kill (attempt 2); the graph continued from checkpoint 13, ran turns 4–10 and stopped at human review. 10 turns, 10 LLM calls in state, $0.131. The call in flight at the kill was paid for and lost; nothing else ran twice. Temporal's history shows just one activity (scheduled, started as attempt 2, completed); the per-turn story lives in the LangGraph checkpoints.
 
 ## Tests
 
