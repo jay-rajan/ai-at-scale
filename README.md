@@ -6,7 +6,7 @@ Companion code for the **AI at Scale** series on [The AI Switch](https://theaisw
 | # | Experiment | Question |
 |---|---|---|
 | 01 | [Batching](01-batching/) | Can the same prompt at temperature 0 give opposite answers? |
-| 02 | [Invoice Investigation Agent](02-invoice-agent/) | How do you build an agent an enterprise can trust: tools (MCP), explicit state, durable workflows (Temporal), and a human in the loop? |
+| 02 | [Invoice Investigation Agent](02-invoice-agent/) | How do you build an agent an enterprise can trust: tools (MCP), explicit state, durable workflows (Temporal), and a human in the loop? Article: [Do you even need an AI agent?](https://theaiswitch.substack.com/p/do-you-even-need-an-ai-agent-rules) |
 
 ## Setup
 

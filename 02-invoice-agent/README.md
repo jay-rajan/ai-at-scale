@@ -8,7 +8,7 @@ All companies, people and accounts in `data/` are fictional.
 
 ## Follow the article step by step
 
-Companion code for **"Do you even need an Agent?"** on [The AI Switch](https://theaiswitch.substack.com/). Each step of the article maps to code here:
+Companion code for **[Do you even need an AI agent? Rules vs agents vs Temporal vs LangGraph](https://theaiswitch.substack.com/p/do-you-even-need-an-ai-agent-rules)** on The AI Switch. Each step of the article maps to code here:
 
 | Step | What it adds | Where | Run it |
 |---|---|---|---|
