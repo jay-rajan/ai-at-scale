@@ -1,0 +1,105 @@
+{
+ "summary": {
+  "model": "typesafe/jev-1.13",
+  "version": "typesafe/jev-1.13-20260917",
+  "pairs": 5,
+  "errors": 0,
+  "first_error": null,
+  "choices": {
+   "same": 1,
+   "different": 3,
+   "unsure": 1
+  },
+  "merged": 1,
+  "wrong_merges": 1,
+  "real_dups_merged": 0,
+  "real_dups": 0,
+  "real_dups_in_unsure": 0,
+  "real_dups_called_different": 0,
+  "cost_usd": 0.0001,
+  "median_call_s": 0.28,
+  "wall_s": 1.0
+ },
+ "pairs": [
+  {
+   "a": "3",
+   "b": "3620",
+   "truth": false,
+   "choice": "different",
+   "confidence": 0.71,
+   "probabilities": {
+    "same": 0.03,
+    "different": 0.8099999999999999,
+    "unsure": 0.16
+   },
+   "seconds": 1.0107701253145933,
+   "cost": 2.037e-05,
+   "tokens_in": 485,
+   "model_version": "typesafe/jev-1.13-20260917"
+  },
+  {
+   "a": "3",
+   "b": "8387",
+   "truth": false,
+   "choice": "unsure",
+   "confidence": 0.43,
+   "probabilities": {
+    "same": 0.03,
+    "different": 0.35,
+    "unsure": 0.62
+   },
+   "seconds": 0.22809104155749083,
+   "cost": 2.0328e-05,
+   "tokens_in": 484,
+   "model_version": "typesafe/jev-1.13-20260917"
+  },
+  {
+   "a": "4",
+   "b": "5417",
+   "truth": false,
+   "choice": "different",
+   "confidence": 0.61,
+   "probabilities": {
+    "same": 0.03,
+    "different": 0.74,
+    "unsure": 0.23
+   },
+   "seconds": 0.22060283366590738,
+   "cost": 2.0328e-05,
+   "tokens_in": 484,
+   "model_version": "typesafe/jev-1.13-20260917"
+  },
+  {
+   "a": "9",
+   "b": "2717",
+   "truth": false,
+   "choice": "same",
+   "confidence": 0.28,
+   "probabilities": {
+    "same": 0.52,
+    "different": 0.11,
+    "unsure": 0.37
+   },
+   "seconds": 0.34741704165935516,
+   "cost": 2.0202e-05,
+   "tokens_in": 481,
+   "model_version": "typesafe/jev-1.13-20260917"
+  },
+  {
+   "a": "9",
+   "b": "7357",
+   "truth": false,
+   "choice": "different",
+   "confidence": 0.3,
+   "probabilities": {
+    "same": 0.11,
+    "different": 0.53,
+    "unsure": 0.36
+   },
+   "seconds": 0.2764137079939246,
+   "cost": 2.0244e-05,
+   "tokens_in": 482,
+   "model_version": "typesafe/jev-1.13-20260917"
+  }
+ ]
+}

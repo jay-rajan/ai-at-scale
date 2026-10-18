@@ -8,3 +8,6 @@ logs/
 temporal-dev.db*
 langgraph.db*
 langgraph-temporal.db*
+03-entity-resolution/data/
+03-entity-resolution/results/jev_100000.json
+03-entity-resolution/results/jev_100000.jsonl

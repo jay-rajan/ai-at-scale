@@ -1,0 +1,39 @@
+84,556 pairs, 9,526 already answered, 75,030 to ask
+  5,000 / 75,030  10s
+  10,000 / 75,030  36s
+  15,000 / 75,030  63s
+  20,000 / 75,030  91s
+  25,000 / 75,030  117s
+  30,000 / 75,030  144s
+  35,000 / 75,030  186s
+  40,000 / 75,030  197s
+  45,000 / 75,030  225s
+  50,000 / 75,030  251s
+  55,000 / 75,030  278s
+  60,000 / 75,030  305s
+  65,000 / 75,030  332s
+  70,000 / 75,030  359s
+  75,000 / 75,030  383s
+{
+  "model": "typesafe/jev-1.13",
+  "version": "typesafe/jev-1.13-20260917",
+  "pairs": 84556,
+  "errors": 180,
+  "first_error": "429 b'{\"error\":{\"message\":\"Rate limit exceeded: typesafe/jev-1.13-20260917/2db56e7f-853c-44db-9dff-3eaacfa59122. High demand for typesafe/jev-1.13 on OpenRouter - limited to 3000 requests per minute. Please'",
+  "choices": {
+    "same": 4228,
+    "different": 72290,
+    "unsure": 7858
+  },
+  "merged": 4228,
+  "wrong_merges": 2499,
+  "real_dups_merged": 1729,
+  "real_dups": 1758,
+  "real_dups_in_unsure": 11,
+  "real_dups_called_different": 18,
+  "cost_usd": 1.71827,
+  "median_call_s": 0.17,
+  "wall_s_this_run": 383.3,
+  "workers": 100
+}
+-> results/jev_100000.json

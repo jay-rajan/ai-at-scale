@@ -1,0 +1,73 @@
+=== 00_prepare.py
+loaded 5,000,000 records in 3.4s
+wrote 100,001 records, 70,269 real people -> sample_100000.csv
+real 7.66
+=== 01_profile.py
+records: 100,001   sources: {0: 19898, 1: 20040, 2: 20101, 3: 19888, 4: 20074}
+'customers' if you count rows:               100,001
+'customers' after exact de-duplication:      78,031
+real people (ground truth):                  70,269
+records per person: {1: 60297, 2: 1715, 3: 1669, 4: 1673, 5: 4915}
+
+field problems:
+  givenname  missing   0.0%
+  surname    missing   0.0%
+  suburb     missing   0.0%
+  postcode   missing   0.0%
+  names with non-letters        2.6%
+  postcodes that aren't NC ZIPs   2.1%   e.g. ['28z16', '2745s', '274s5', '2836g', '2836q']
+
+same person, different value (of 65,910 true pairs, vs first record): {'suburb': 5770, 'postcode': 5468, 'givenname': 5733, 'surname': 5765}
+real 0.24
+=== 02_normalize.py
+place dictionary: 1,257 known places (7.1s)
+normalized 100,001 records in 0.22s (2.2 µs/record)
+  places snapped to a known spelling: 2,252
+  postcodes blanked (not a NC ZIP):   2,053
+exact de-dup: 78,031 before -> 78,012 after normalizing (truth: 70,269)
+-> normalized_100000.csv
+real 7.63
+=== 03_block.py
+100,001 records -> 5,000,050,000 possible pairs, 65,910 true pairs
+
+pass                                    pairs  finds true pairs  biggest block  rows skipped    time
+sound(surname)+first initial          457,244             86.1%            177             0   0.10s
+sound(given)+sound(surname)            81,020             78.0%             33             0   0.09s
+surname[:3]+postcode                   92,041             78.0%             30             0   0.06s
+given[:3]+place                       445,193             84.1%            191           319   0.10s
+UNION                                 895,696             97.8%                                0.52s
+
+comparisons cut by 99.9821%  (5,582x fewer)
+true pairs no bucket caught: 1,435
+-> candidates_100000.pkl
+real 1.14
+=== 04_score.py
+scored 895,696 pairs in 1.37s (1.5 µs/pair)
+
+ score band  same person  different
+  0.15+                0         11
+  0.20+                0         51
+  0.25+                0        261
+  0.30+                0        371
+  0.35+                0        640
+  0.40+                0      3,924
+  0.45+                0     17,203
+  0.50+                0     45,316
+  0.55+                0     82,387
+  0.60+                7    131,716
+  0.65+               14    155,124
+  0.70+                6    176,167
+  0.75+                1    134,575
+  0.80+               31     65,319
+  0.85+              287     15,866
+  0.90+            5,546      1,912
+  0.95+           58,583        378
+
+auto match   (>= 0.93):  63,366   wrong merges: 680
+unsure       (0.8-0.93):  84,556   of which same person: 1,761
+auto no match (< 0.8): 747,774   missed same person: 28
+
+code only (unsure = no):   precision 98.9%  recall 95.1%  F1 0.970
+code only (unsure = yes):  precision 43.6%  recall 97.8%  F1 0.603
+-> scored_100000.pkl, grey_100000.csv
+real 2.29

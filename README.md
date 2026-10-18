@@ -7,6 +7,7 @@ Companion code for the **AI at Scale** series on [The AI Switch](https://theaisw
 |---|---|---|
 | 01 | [Batching](01-batching/) | Can the same prompt at temperature 0 give opposite answers? |
 | 02 | [Invoice Investigation Agent](02-invoice-agent/) | How do you build an agent an enterprise can trust: tools (MCP), explicit state, durable workflows (Temporal), and a human in the loop? Article: [Do you even need an AI agent?](https://theaiswitch.substack.com/p/do-you-even-need-an-ai-agent-rules) |
+| 03 | [Entity resolution at scale](03-entity-resolution/) | How many real people are in 5 million records, and how little of the work needs AI? |
 
 ## Setup
 

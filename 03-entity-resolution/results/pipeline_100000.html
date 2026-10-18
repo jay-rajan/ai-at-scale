@@ -1,0 +1,228 @@
+<title>Matching 100,000 Records</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,500;8..60,650&family=Public+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: one reading column; a step ledger is the spine, numbers sit in mono columns like a run log. */
+:root {
+  --bg: #f6f7f6;
+  --surface: #ffffff;
+  --ink: #17201f;
+  --muted: #5b6765;
+  --line: #d9dfdd;
+  --accent: #0f6e68;
+  --accent-soft: #e2f0ee;
+  --warn: #9a5b08;
+  --warn-soft: #fbf0de;
+  --bad: #a3322a;
+  --good: #1f7a3d;
+  --serif: "Source Serif 4", Georgia, "Times New Roman", serif;
+  --sans: "Public Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #111716; --surface: #18201f; --ink: #e6ecea; --muted: #9aa8a5; --line: #2c3735;
+    --accent: #5cc2b8; --accent-soft: #163330; --warn: #e2a64f; --warn-soft: #33270f;
+    --bad: #ec8a80; --good: #73c98f; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #111716; --surface: #18201f; --ink: #e6ecea; --muted: #9aa8a5; --line: #2c3735;
+  --accent: #5cc2b8; --accent-soft: #163330; --warn: #e2a64f; --warn-soft: #33270f;
+  --bad: #ec8a80; --good: #73c98f; color-scheme: dark;
+}
+body { background: var(--bg); color: var(--ink); font: 15px/1.6 var(--sans); }
+.wrap { max-width: 1040px; margin: 0 auto; padding-inline: 20px; padding-block: 40px 64px; display: grid; gap: 44px; }
+h1, h2 { font-family: var(--serif); font-weight: 650; text-wrap: balance; margin: 0; letter-spacing: -0.01em; }
+h1 { font-size: clamp(30px, 5vw, 44px); line-height: 1.1; }
+h2 { font-size: 23px; line-height: 1.2; }
+p { margin: 0; max-width: 68ch; }
+.eyebrow { font: 500 12px/1 var(--mono); text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent); }
+.lede { color: var(--muted); font-size: 17px; }
+header { display: grid; gap: 14px; }
+section { display: grid; gap: 16px; }
+.num { font-family: var(--mono); font-variant-numeric: tabular-nums; }
+.tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; }
+.tile { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 16px 18px; display: grid; gap: 4px; }
+.tile .big { font: 500 26px/1.15 var(--mono); font-variant-numeric: tabular-nums; }
+.tile .lbl { color: var(--muted); font-size: 13px; }
+.scroll { overflow-x: auto; background: var(--surface); border: 1px solid var(--line); border-radius: 8px; }
+table { border-collapse: collapse; width: 100%; font-size: 14px; }
+th, td { text-align: left; padding: 10px 14px; border-bottom: 1px solid var(--line); vertical-align: top; }
+th { font: 600 11px/1.3 var(--mono); text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); background: var(--bg); white-space: nowrap; }
+tr:last-child td { border-bottom: 0; }
+td.r, th.r { text-align: right; }
+td .sub { display: block; color: var(--muted); font-size: 12.5px; }
+.step { font: 500 13px/1 var(--mono); color: var(--accent); }
+tr.model td { background: var(--accent-soft); }
+tr.total td { font-weight: 600; background: var(--bg); }
+.pill { display: inline-block; font: 500 11.5px/1 var(--mono); padding: 4px 7px; border-radius: 99px; white-space: nowrap; }
+.pill.good { color: var(--good); background: color-mix(in srgb, var(--good) 13%, transparent); }
+.pill.warn { color: var(--warn); background: var(--warn-soft); }
+.pill.bad { color: var(--bad); background: color-mix(in srgb, var(--bad) 13%, transparent); }
+figure { margin: 0; background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 18px 18px 12px; }
+figure svg { width: 100%; height: auto; display: block; }
+figcaption { color: var(--muted); font-size: 13px; margin-top: 8px; }
+.notes { display: grid; gap: 10px; padding-left: 20px; margin: 0; max-width: 72ch; }
+.notes li::marker { color: var(--accent); }
+.two { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; }
+pre { margin: 0; font: 13px/1.55 var(--mono); padding: 16px 18px; overflow-x: auto; }
+.small { color: var(--muted); font-size: 13px; }
+</style>
+
+<div class="wrap">
+  <header>
+    <span class="eyebrow">AI at Scale · entity resolution · run of 16 Oct 2026</span>
+    <h1>Matching 100,000 records</h1>
+    <p class="lede">100,001 person records from 5 systems, 4 fields each (first name, last name, town, postcode). How many real people are there? Code does the heavy lifting; a model (Jev) sees only the pairs code is unsure about.</p>
+  </header>
+
+  <section aria-label="Summary">
+    <div class="tiles">
+      <div class="tile"><span class="big">5.0 B → 5,161</span><span class="lbl">possible pairs → pairs left for a person</span></div>
+      <div class="tile"><span class="big">70,158</span><span class="lbl">people found · real number 70,269</span></div>
+      <div class="tile"><span class="big">~7.5 min</span><span class="lbl">end to end · 19 s of it is code</span></div>
+      <div class="tile"><span class="big">$1.72</span><span class="lbl">total spend, all on Jev · code is $0</span></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Each step, what it costs, what it leaves</h2>
+    <div class="scroll">
+      <table>
+        <thead><tr><th>Step</th><th>What it does</th><th class="r">Time</th><th class="r">Cost</th><th>Data after the step</th></tr></thead>
+        <tbody>
+          <tr><td class="step">0 · Sample</td><td>Load the 5M dataset, take whole people until 100k records</td><td class="r num">7.7 s</td><td class="r num">$0</td><td><span class="num">100,001</span> records<span class="sub">70,269 real people (answer key, hidden from the pipeline)</span></td></tr>
+          <tr><td class="step">1 · Profile</td><td>Count rows, gaps and bad values</td><td class="r num">0.2 s</td><td class="r num">$0</td><td>Exact de-dup says <span class="num">78,031</span> customers<span class="sub">11% too many: typos hide duplicates</span></td></tr>
+          <tr><td class="step">2 · Clean</td><td>Letters only in names, snap misspelled towns to known towns, blank invalid ZIPs</td><td class="r num">7.6 s</td><td class="r num">$0</td><td><span class="num">2,252</span> towns fixed · <span class="num">2,053</span> postcodes blanked<span class="sub">7.1 s of this builds the town list from all 5M; cleaning itself is 0.2 s</span></td></tr>
+          <tr><td class="step">3 · Bucket</td><td>4 keys (sounds of names, name starts + postcode or town). Compare only records that share a key</td><td class="r num">1.1 s</td><td class="r num">$0</td><td><span class="num">5,000,050,000 → 895,696</span> pairs<span class="sub">5,582× fewer · 97.8% of real duplicate pairs kept · 1,435 never compared</span></td></tr>
+          <tr><td class="step">4 · Score</td><td>Typo-tolerant similarity per field, weighted. ≥ 0.93 merge, &lt; 0.80 reject, between: unsure</td><td class="r num">2.3 s</td><td class="r num">$0</td><td>Merge <span class="num">63,366</span> <span class="pill bad">680 wrong</span><br>Reject <span class="num">747,774</span> <span class="pill good">28 real lost</span><br>Unsure <span class="num">84,556</span><span class="sub">only 1,761 of them (2.1%) are real duplicates</span></td></tr>
+          <tr class="model"><td class="step">5 · Jev</td><td>Decision model on the unsure pairs only. P(same) ≥ 0.7 merge, &lt; 0.3 reject, between: a person</td><td class="r num">~7.2 min</td><td class="r num">$1.72</td><td>Merge <span class="num">1,233</span> <span class="pill bad">233 wrong</span><br>Reject <span class="num">78,162</span> <span class="pill good">14 real lost</span><br>To a person <span class="num">5,161</span><span class="sub">747 of them real duplicates</span></td></tr>
+          <tr><td class="step">6 · Resolve</td><td>Turn merged pairs into people (A = B and B = C → one person). Check against the answer key</td><td class="r num">0.7 s</td><td class="r num">$0</td><td><span class="num">70,158</span> people found<span class="sub">real: 70,269</span></td></tr>
+          <tr class="total"><td>Total</td><td></td><td class="r num">~7.5 min</td><td class="r num">$1.72</td><td>Code: 19 s, $0 · Jev: ~7.2 min, $1.72</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="small">Jev: 84,556 calls, one pair each, ~485 input tokens, output free, median 0.17 s per call. Up to 100 calls at a time; OpenRouter capped the model, so 180 calls were rate-limited and re-asked. Time shown is the run at full parallelism (196 pairs a second).</p>
+  </section>
+
+  <section>
+    <h2>The funnel</h2>
+    <figure>
+      <svg viewBox="0 0 860 250" role="img" aria-label="Pairs left after each step on a log scale: 5.0 billion possible, 895,696 after bucketing, 84,556 unsure after scoring, 5,161 left for a person after Jev.">
+        <g style="font-family: var(--mono); font-size: 12px;">
+          <!-- log10 scale: 3 → x=170, 10 → x=820 ; px per decade = 92.86 -->
+          <line x1="170" y1="20" x2="170" y2="214" style="stroke: var(--line)"/>
+          <line x1="356" y1="20" x2="356" y2="214" style="stroke: var(--line)"/>
+          <line x1="541" y1="20" x2="541" y2="214" style="stroke: var(--line)"/>
+          <line x1="727" y1="20" x2="727" y2="214" style="stroke: var(--line)"/>
+          <text x="170" y="236" text-anchor="middle" style="fill: var(--muted)">1 K</text>
+          <text x="356" y="236" text-anchor="middle" style="fill: var(--muted)">100 K</text>
+          <text x="541" y="236" text-anchor="middle" style="fill: var(--muted)">10 M</text>
+          <text x="727" y="236" text-anchor="middle" style="fill: var(--muted)">1 B</text>
+
+          <text x="0" y="45" style="fill: var(--ink)">All pairs</text>
+          <rect x="170" y="30" width="621" height="24" rx="3" style="fill: var(--line)"/>
+          <text x="784" y="47" text-anchor="end" style="fill: var(--ink)">5.0 B</text>
+
+          <text x="0" y="95" style="fill: var(--ink)">Bucketed</text>
+          <rect x="170" y="80" width="274" height="24" rx="3" style="fill: var(--accent); opacity: .45"/>
+          <text x="454" y="97" style="fill: var(--ink)">895,696</text>
+
+          <text x="0" y="145" style="fill: var(--ink)">Unsure</text>
+          <rect x="170" y="130" width="179" height="24" rx="3" style="fill: var(--accent); opacity: .7"/>
+          <text x="359" y="147" style="fill: var(--ink)">84,556 → Jev</text>
+
+          <text x="0" y="195" style="fill: var(--ink)">To a person</text>
+          <rect x="170" y="180" width="66" height="24" rx="3" style="fill: var(--accent)"/>
+          <text x="246" y="197" style="fill: var(--ink)">5,161</text>
+        </g>
+      </svg>
+      <figcaption>Pairs left after each step, log scale. Each gridline is 100× the one before.</figcaption>
+    </figure>
+  </section>
+
+  <section>
+    <h2>Result against the answer key</h2>
+    <div class="scroll">
+      <table>
+        <thead><tr><th></th><th class="r">People found</th><th class="r">Precision</th><th class="r">Recall</th><th class="r">Groups mixing 2+ people</th><th class="r">Groups with 2 records from one system</th></tr></thead>
+        <tbody>
+          <tr><td>Real answer</td><td class="r num">70,269</td><td class="r num">—</td><td class="r num">—</td><td class="r num">0</td><td class="r num">0</td></tr>
+          <tr><td>Code only<span class="sub">unsure pairs left unmerged</span></td><td class="r num">70,601</td><td class="r num">98.5%</td><td class="r num">96.7%</td><td class="r num">334</td><td class="r num">99</td></tr>
+          <tr class="model"><td>Code + Jev</td><td class="r num">70,158</td><td class="r num">97.3%</td><td class="r num">98.0%</td><td class="r num">483</td><td class="r num">200</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="small">Precision: of the record pairs we put in one person, how many truly are. Recall: of the real duplicate pairs, how many we joined. Both counted after grouping. The last column needs no answer key: each system has no duplicates of its own, so such a group is certainly wrong.</p>
+  </section>
+
+  <section>
+    <h2>How sure is Jev, really?</h2>
+    <div class="two">
+      <div class="scroll">
+        <table>
+          <thead><tr><th>Merge when P(same) ≥</th><th class="r">Merged</th><th class="r">Wrong</th><th class="r">Right</th></tr></thead>
+          <tbody>
+            <tr><td class="num">0.70</td><td class="r num">1,233</td><td class="r num">233</td><td class="r num">81%</td></tr>
+            <tr><td class="num">0.80</td><td class="r num">686</td><td class="r num">97</td><td class="r num">86%</td></tr>
+            <tr><td class="num">0.90</td><td class="r num">402</td><td class="r num">35</td><td class="r num">91%</td></tr>
+            <tr><td class="num">0.95</td><td class="r num">250</td><td class="r num">16</td><td class="r num">94%</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <ul class="notes">
+        <li>At 10k the same 0.7 cut-off merged 99 pairs with <b>0 wrong</b>. At 100k it is 81% right.</li>
+        <li>The pile changed, not the model: at 10k, 17% of unsure pairs were real duplicates; at 100k, 2%. Rare yeses are harder to get right.</li>
+        <li>Rejecting is where Jev shines: 78,162 rejected, 14 real duplicates lost.</li>
+        <li>Its own label ("same") was worse: 4,236 merges, 2,504 wrong. Use the probability.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>What the run shows</h2>
+    <ul class="notes">
+      <li><b>Code did 99.99% of the work for $0.</b> 5 billion possible pairs down to 84,556 unsure in 19 seconds on a laptop.</li>
+      <li><b>The model cleared most of the rest cheaply.</b> 84,556 → 5,161 for $1.72 in about 7 minutes.</li>
+      <li><b>It trades errors, it doesn't remove them.</b> Recall up 1.3 points, precision down 1.2. Wrong groups rose from 334 to 483.</li>
+      <li><b>A free alarm catches part of it.</b> Groups with two records from one system doubled (99 → 200): a check to run before trusting any merge.</li>
+      <li><b>5,161 pairs still need a person.</b> At 5M, the same pipeline leaves 64 million unsure pairs for code to hand over.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Code</h2>
+    <p class="small"><span class="num">~/src/ai-at-scale/03-entity-resolution/</span> · not committed yet · the answer key is used only for grading</p>
+    <div class="scroll">
+<pre>er.py                 shared helpers
+  load_raw · sample_by_person · true_pairs
+  clean_name · clean_place · clean_postcode · build_place_dictionary · fix_place
+  BLOCKING_PASSES (4 keys) · block · compare · score (weights 0.35 / 0.30 / 0.20 / 0.15)
+  UnionFind · clusters_from · prf
+
+00_prepare.py   → sample_100000.csv          load_raw → sample_by_person
+01_profile.py   (report only)                exact de-dup vs answer key
+02_normalize.py → normalized_100000.csv      clean_* + fix_place
+03_block.py     → candidates_100000.pkl      block (4 keys, same-system pairs dropped)
+04_score.py     → scored_100000.pkl          compare → score → merge / unsure / reject
+                → grey_100000.csv            the unsure pairs
+07_jev.py       → jev_100000.jsonl           POST /api/alpha/decisions, one pair per call, resumable
+08_resolve.py   → resolve_100000.json        code merges + Jev merges → clusters_from → prf
+
+Side studies: 03b_minhash.py · 03c_bucket_stats.py (5M) · 04b/04c (all 5M pairs) · 05_llm.py (chat LLMs) · 06_when_in_doubt.py</pre>
+    </div>
+  </section>
+
+  <section>
+    <h2>Method and limits</h2>
+    <ul class="notes">
+      <li>Data: North Carolina Voters 5M, University of Leipzig, CC BY 4.0. Real voter names with generated duplicates across 5 systems. Sample of whole people, seed 7.</li>
+      <li>Only 4 fields. Some pairs cannot be told apart by anyone: two different people with identical records exist in the data.</li>
+      <li>Score cut-offs were set on the 10k sample and reused unchanged. Jev cut-offs (0.3 / 0.7) were set on 10k labelled pairs.</li>
+      <li>One Jev run. Model typesafe/jev-1.13-20260917 via OpenRouter's alpha Decisions API; cost is what OpenRouter reported per call.</li>
+      <li>Precision and recall are counted on record pairs after grouping, so they differ slightly from the pairwise numbers in earlier steps.</li>
+    </ul>
+  </section>
+</div>

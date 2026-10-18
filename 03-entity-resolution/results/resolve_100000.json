@@ -1,0 +1,28 @@
+{
+ "jev_merge": 1233,
+ "jev_merge_wrong": 233,
+ "jev_reject": 78162,
+ "jev_reject_real_lost": 14,
+ "steward": 5161,
+ "steward_real": 747,
+ "after_code": {
+  "step": "code only",
+  "customers_found": 70601,
+  "real_customers": 70269,
+  "pair_precision": 0.9849,
+  "pair_recall": 0.9673,
+  "f1": 0.976,
+  "groups_mixing_people": 334,
+  "groups_with_same_system_conflict": 99
+ },
+ "after_code_and_jev": {
+  "step": "code + Jev",
+  "customers_found": 70158,
+  "real_customers": 70269,
+  "pair_precision": 0.9725,
+  "pair_recall": 0.9802,
+  "f1": 0.9764,
+  "groups_mixing_people": 483,
+  "groups_with_same_system_conflict": 200
+ }
+}

@@ -1,0 +1,41 @@
+{
+ "records": 5000000,
+ "distinct_pairs_scored": 235613394,
+ "true_pairs": 3331384,
+ "score_seconds": 93,
+ "us_per_pair": 1.58,
+ "score": {
+  "merge_same": 3057082,
+  "merge_diff": 857650,
+  "unsure_same": 68486,
+  "unsure_diff": 63717962,
+  "no_same": 509,
+  "no_diff": 167911705
+ },
+ "guard": {
+  "merge_same": 3042396,
+  "merge_diff": 630664,
+  "unsure_same": 83172,
+  "unsure_diff": 63944948,
+  "no_same": 509,
+  "no_diff": 167911705
+ },
+ "buckets_with_unsure": {
+  "buckets_2": 51163,
+  "buckets_3-9": 251747,
+  "buckets_10-50": 234892,
+  "buckets_51-200": 48709,
+  "records_2": 102326,
+  "records_3-9": 1403862,
+  "records_10-50": 4939150,
+  "records_51-200": 4409411,
+  "unsure_2": 51163,
+  "unsure_3-9": 1104280,
+  "unsure_10-50": 15548935,
+  "unsure_51-200": 47323742,
+  "real_2": 300,
+  "real_3-9": 15307,
+  "real_10-50": 34075,
+  "real_51-200": 33490
+ }
+}

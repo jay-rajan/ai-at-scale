@@ -1,0 +1,35 @@
+
+100000_google_gemini-3.5-flash-lite_x10_run1_s5000  (5,000 unsure pairs, 98 real duplicates)
+     merge only if  merged  wrong  real dups merged  to steward
+            always     134     40          94 of 98            0
+       conf >= 0.8     113     23          90 of 98           21
+       conf >= 0.9      53      3          50 of 98           81
+      conf >= 0.95      20      2          18 of 98          114
+
+10000_anthropic_claude-haiku-5.5_x10_run1  (967 unsure pairs, 164 real duplicates)
+     merge only if  merged  wrong  real dups merged  to steward
+            always     215     51         164 of 164           0
+       conf >= 0.8     156      8         148 of 164          59
+       conf >= 0.9      94      2          92 of 164         121
+      conf >= 0.95      36      2          34 of 164         179
+
+10000_google_gemini-3.5-flash-lite_x10_run1  (967 unsure pairs, 164 real duplicates)
+     merge only if  merged  wrong  real dups merged  to steward
+            always     170     11         159 of 164           0
+       conf >= 0.8     166      8         158 of 164           4
+       conf >= 0.9      94      6          88 of 164          76
+      conf >= 0.95      31      3          28 of 164         139
+
+10000_google_gemini-3.5-flash-lite_x10_run2  (967 unsure pairs, 164 real duplicates)
+     merge only if  merged  wrong  real dups merged  to steward
+            always     166     13         153 of 164           0
+       conf >= 0.8     157      9         148 of 164           9
+       conf >= 0.9      93      7          86 of 164          73
+      conf >= 0.95      33      3          30 of 164         133
+
+10000_google_gemini-3.5-flash_x10_run1  (967 unsure pairs, 164 real duplicates)
+     merge only if  merged  wrong  real dups merged  to steward
+            always     165      5         160 of 164           0
+       conf >= 0.8     164      5         159 of 164           1
+       conf >= 0.9     117      2         115 of 164          48
+      conf >= 0.95      32      0          32 of 164         133

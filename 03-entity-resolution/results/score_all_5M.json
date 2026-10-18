@@ -1,0 +1,23 @@
+{
+ "records": 5000000,
+ "distinct_pairs_scored": 235613394,
+ "true_pairs": 3331384,
+ "score_seconds": 94,
+ "us_per_pair": 1.6,
+ "score": {
+  "merge_same": 3057082,
+  "merge_diff": 857650,
+  "unsure_same": 68486,
+  "unsure_diff": 63717962,
+  "no_same": 509,
+  "no_diff": 167911705
+ },
+ "guard": {
+  "merge_same": 3042396,
+  "merge_diff": 630664,
+  "unsure_same": 83172,
+  "unsure_diff": 63944948,
+  "no_same": 509,
+  "no_diff": 167911705
+ }
+}
