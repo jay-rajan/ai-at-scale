@@ -3,6 +3,8 @@
 How many real people are in 5 million person records, and where does AI help?
 Code does almost all of the work. A model only sees the pairs code can't decide.
 
+Companion code for **[From AI user to AI builder: matching 5 million records without a $250M bill](https://theaiswitch.substack.com/p/from-ai-user-to-ai-builder-matching)** on The AI Switch.
+
 ## The data
 
 [North Carolina Voters 5M](https://dbs.uni-leipzig.de/research/projects/benchmark-datasets-for-entity-resolution) from the University of Leipzig database group (CC BY 4.0). 5 sources x 1M records of real voter names with generated duplicates (typos, missing values). Fields: given name, surname, town, postcode. Each source has no duplicates of its own. `recid` says which records are the same person: the pipeline never uses it to decide, only to grade.
